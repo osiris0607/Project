@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.com.vo.UserinfoVo">
+
+	<insert id="insertUserInfo" parameterType="sist.com.vo.UserinfoVo">
+		INSERT INTO USERINFO 
+		(U_NO, U_NAME, U_ID, U_PASSWORD, U_GENDER, U_BIRTH, U_EMAIL, U_ADDRESS, U_TEL, U_CP, U_AMOUNT, U_POINT, U_REGDATE, M_CODE)
+		VALUES
+		(USERINFO_SEQ.NEXTVAL, #{u_name}, #{u_id}, #{u_password}, #{u_gender}, #{u_birth, jdbcType=DATE}, #{u_email}, #{u_address}, #{u_tel}, #{u_cp}, 0, 0, SYSDATE, 1)
+	</insert>
+
+	<select id="idChk" resultType="int" parameterType="String">
+		SELECT count(U_ID) FROM USERINFO WHERE U_ID = #{u_id}
+	</select>
+
+	<select id="selectAddress" parameterType="java.lang.String"
+		resultType="sist.com.vo.ZipcodeBean">
+		SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,'')BUNJI
+		FROM
+		ZIPCODE
+		WHERE DONG LIKE '%'||#{VALUE}||'%'
+
+	</select>
+
+
+</mapper>
