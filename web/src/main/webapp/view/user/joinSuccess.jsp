@@ -73,7 +73,7 @@
  <div class="tab">  
   	<div class="sub-tab">
 		  <h2>회원가입이 <b style="color: red">완료</b> 되었습니다.</h2>
- 		 <h3>(OOO)님의 가입을 축하드립니다. 로그인 후 이용해주세요.</h3>
+ 		 <h3>${member.u_name }님의 가입을 축하드립니다. 로그인 후 이용해주세요.</h3>
  		<a href="main.jsp" style="color: black;"><button style="width:20%;"><div style="background-color: white">메인으로</div></button></a>
  		<a href="login_toggleTap.jsp" style="color: black;"><button style="width:20%;"><div style="background-color: white">로그인</div></button></a>
   </div>
