@@ -57,7 +57,7 @@ public class MemberDao extends SqlSessionDaoSupport {
 		return this.getSqlSession().selectList("selectSeller");
 	}
 	
-	public List<UserinfoVo> selectUserInfo(String id){
-		return this.getSqlSession().selectList("selectUserInfo", id);
+	public UserinfoVo selectUserInfo(String id){
+		return this.getSqlSession().selectOne("selectUserInfo", id);
 	}
 }

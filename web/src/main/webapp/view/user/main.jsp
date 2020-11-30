@@ -92,6 +92,10 @@ $(function(){
 </script>
 </head>
 <body>
+<!-- vo통채로 세션 저장해서 개별데이터 갖다 쓸 수 있음 -->
+${userInfo.u_id }
+${userInfo.u_name }
+
 <main>
 <jsp:include page="../include/header.jsp" />
 <div class="page">

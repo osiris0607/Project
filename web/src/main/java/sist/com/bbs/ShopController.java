@@ -38,10 +38,12 @@ public class ShopController {
 	
 	@RequestMapping(value="userMain.do")
 	public String loginedUser(Model model, HttpSession session) {
+		
 		String id = (String)session.getAttribute("id");
 		System.out.println("id = " + id);
-		model.addAttribute("userInfo", dao.selectUserInfo(id));
-		return "view/user/main";
+		
+		session.setAttribute("userInfo", dao.selectUserInfo(id));
+		return "redirect:/view/user/main.jsp";
 	}
 	
 	@RequestMapping(value="sellerMain.do")
