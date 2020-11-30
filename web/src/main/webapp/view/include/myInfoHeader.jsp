@@ -55,14 +55,14 @@ $(function() {
 </script>
 </head>
 <body>
-
+${userInfo }
 <section id="headerDiv">
 <table id="myInfoHeader">
 
   <thead>
    <tr>
      <th style="text-align: center;" rowspan="2"><img src="/web/bootEx1/02/rose.jpg" alt="장미" class="img-circle" width="100px" height="100px"></th>
-     <th rowspan="2"> <h3><strong>김 선 규</strong> 님 환영합니다</h3><br>
+     <th rowspan="2"> <h3><strong>${userInfo.u_name }</strong> 님 환영합니다</h3><br>
         회원님의 등급은 <span style="background-color:#e3e3e3">VVIP</span> 입니다 
         
              <button type="button" title="팝오버 제목" data-container="body" data-toggle="popover" data-placement="right" 

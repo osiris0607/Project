@@ -44,6 +44,7 @@
     
   </style>
 </head>
+${userInfo }
 <body>
 <header>
 <jsp:include page="../include/header.jsp"/>

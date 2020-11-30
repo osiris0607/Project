@@ -64,6 +64,17 @@
 <script src="/web/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
+	$("input").on("blur", function(){
+		var id = $("input[name='adminId']").val();
+		var pw = $("input[name='adminPw']").val();
+		console.log(id + ' ' + pw);
+		
+		if(id.equals('admin') && pw.equals('admin')){
+			console.log('success');
+		}else{
+			alert('관리자의 아이디와 비밀번호를 입력하세요.');
+		}
+	});
 	$("input#adminLogin").click(function(){
 		alert('check');
 		document.location.href="../admin/adminNoticeMain.jsp";
@@ -87,13 +98,13 @@ $(function(){
     <div class="loginBox">  
     <div class="tab-pane">
      	 <h3><strong>관리자</strong></h3><br>
-			<form action="#" name="#">
+			<form action="#" name="adminRegistForm">
 				<div class="form-div" >
-				<input type="text" autofocus="autofocus" placeholder="ID" style="width: 250px;"><br>
-				<input type="password"  placeholder="Password" style="width: 250px;"><br>
+				<input type="text" id="adminId" name="adminId" autofocus="autofocus" placeholder="ID" style="width: 250px;"><br>
+				<input type="password" id="adminPw" name="adminPw" placeholder="Password" style="width: 250px;"><br>
 				<br>
 				<input type="checkbox" value="id_save">아이디저장
-				<a href="#" class="join">회원가입</a>
+				<!-- <a href="#" class="join">회원가입</a> -->
 				<br><br>
 				</div>
 				<input type="button" value="LOGIN" id="adminLogin">

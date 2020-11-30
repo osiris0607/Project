@@ -22,8 +22,21 @@
 		<beans:property name="username" value="k4cl"></beans:property>
 		<beans:property name="password" value="1208"></beans:property>
 	</beans:bean>
+	
+	<!-- log4j 설정 -->	
+	<beans:bean id="logds" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<beans:constructor-arg ref="ds"></beans:constructor-arg>
+		<beans:property name="logFormatter">
+			<beans:bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<beans:property name="loggingType" value="MULTI_LINE"></beans:property>
+				<beans:property name="sqlPrefix" value="SQL :"></beans:property>
+			</beans:bean>
+		</beans:property>
+	</beans:bean>
+	
+	
 	<beans:bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="ds"></beans:property>
+		<beans:property name="dataSource" ref="logds"></beans:property>
 		<beans:property name="configLocation" value="WEB-INF/Config.xml"></beans:property>
 		
 	</beans:bean>
