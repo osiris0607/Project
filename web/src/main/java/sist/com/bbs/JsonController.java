@@ -1,5 +1,6 @@
 package sist.com.bbs;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -14,22 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
 import sist.com.dao.MemberDao;
 import sist.com.vo.ZipcodeBean;
 
-@Controller
+@RestController
 public class JsonController {
 	@Resource(name = "memberDao")
 	private MemberDao dao;
-
+//UserJoin
 	@RequestMapping(value = "zipcodeSearch.do", method = { RequestMethod.POST, RequestMethod.GET })
-	public @ResponseBody List<ZipcodeBean> searchAddressAction(
+	public List<ZipcodeBean> searchAddressAction(
 			@RequestParam(value = "dong", required = false, defaultValue = "") String dong) {
 		System.out.println("매퍼왔음");
 		System.out.println("dong = " + dong);
 
-		return dao.selectAddress(dong);
+		return dao.selectAddressUser(dong);
 	}
 
 	@RequestMapping(value = "idCheck.do", method = { RequestMethod.POST, RequestMethod.GET })
-	public @ResponseBody int idChkAction(@RequestParam(value = "id", required = false, defaultValue = "") String id) {
+	public int idChkAction(@RequestParam(value = "id", required = false, defaultValue = "") String id) {
 		// data : id값이 들어옴
 
 		System.out.println("id = " + id);
@@ -39,19 +40,55 @@ public class JsonController {
 
 		return dao.idChk(id); // ajax data값
 	}
-
+//Login
 	@RequestMapping(value = "userlogin.do")
-	public @ResponseBody String userloginAction(@RequestParam(value = "id", required = false, defaultValue = "") String id,
+	public String userloginAction(@RequestParam(value = "id", required = false, defaultValue = "") String id,
 									String password, HttpSession session) {
 		System.out.println("로그인 매퍼 왔니?");
 		if (dao.userIdCheck(id, password)) {
-			session.setAttribute("id", id);
+			session.setAttribute("userid", id);
 			session.setMaxInactiveInterval(100);
 
 			return "sucess";
 		} else {
 			return "fail";
 		}
+	
+	}
+	
+	
+	@RequestMapping(value="sellerlogin.do")
+	public String sellerloginAction(@RequestParam(value="id", required=false, defaultValue="")String id, String password, HttpSession session) {
+		/*System.out.println("Success!");
+		System.out.println(id+" "+password);
+		System.out.println(dao.sellerIdCheck(id, password)?"success":"fail");
+		
+		return dao.sellerIdCheck(id, password)?"success":"fail";*/
+		
+		if(dao.sellerIdCheck(id, password)) {
+			session.setAttribute("sellerid", id);
+			session.setMaxInactiveInterval(100);
+			
+			return "sucess";
+		} else {
+			return "fail";
+		}
+	}
+//SellerJoin
+	@RequestMapping(value="sellerIdCheck.do")
+	public String sellerIdCheckAction(@RequestParam(value="id",required=false) String id) {
+		return dao.sellerIdCheck(id)?"fail":"success";
+	}
 
+	@RequestMapping(value="sellerNumCheck.do")
+	public String sellerNumCheckAction(@RequestParam(value="num",required=false) String num) {
+		return dao.sellerNumCheck(num)?"fail":"success";
+	}
+	
+	@RequestMapping(value="zipcodeSearch.do")
+	public List<ZipcodeBean> zipcodeSearch(String dong) {
+		List<ZipcodeBean>list=new ArrayList<ZipcodeBean>();
+		list=dao.selectAddress(dong);
+		return list;
 	}
 }

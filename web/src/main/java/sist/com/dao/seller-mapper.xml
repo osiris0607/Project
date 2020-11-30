@@ -14,5 +14,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		resultType="sellermember">
 		SELECT * FROM SELLERINFO
 	</select>
-
+	
+	<select id="selectSellerInfo" resultType="sellermember" parameterType="java.lang.String">
+		SELECT * FROM SELLERINFO WHERE S_ID=#{VALUE}
+	</select>
+	
+	
+	<select id="sellerNumCheck" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT S_CNUM FROM SELLERINFO
+		WHERE S_CNUM=#{value}
+	</select>
+	
+	<select id="selectAddress" parameterType="java.lang.String" resultType="sist.com.vo.ZipcodeBean">
+		SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,' ')BUNJI
+		FROM ZIPCODE
+		WHERE DONG LIKE '%'||#{VALUE}||'%'
+	</select>
+	
+	<insert id="insertSellerInfo" parameterType="sellermember">
+		INSERT INTO SELLERINFO(S_NO,S_ID,S_PASSWORD,S_CNAME,S_CNUM,S_REP,S_EMAIL,S_TEL,S_CP) VALUES(
+		SELLERINFO_SEQ.NEXTVAL,#{id},#{password},#{name},#{num},#{rep},#{email},#{tel},#{cp})
+	</insert>
 </mapper>

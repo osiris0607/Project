@@ -137,6 +137,8 @@
 <script src="/web/js/bootstrap.min.js"></script>
 </head>
 <body>
+${sellerInfo }
+아아아아아아아아아ㅏ아ㅏ아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
 <div class="container"> 
 <!-- 상단 영역 -->
 
@@ -156,8 +158,16 @@
     <!-- 우상단 부분 -->
     <div class="collapse navbar-collapse  navbar-right navbar-ex1-collapse" id="right">
         <ul class="nav navbar-nav" id="top-right-menubar">
+        <% String id = (String)session.getAttribute("sellerid"); 
+		  System.out.println("seller id = " + id);
+		 if(id == null){
+
+		%>
           <li><a href="../user/login_toggleTap.jsp">로그인</a></li>
+         <%}else{ %>
+          <li><a href="/web/logout.do">로그아웃</a></li>
           <li><a href="../seller/sellerNoticeMain.jsp">마이페이지</a></li>
+         <%} %>
         </ul>
         <br><br><br><br>
    	 <div id=search>

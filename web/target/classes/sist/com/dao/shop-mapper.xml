@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		count(U_ID) FROM USERINFO WHERE U_ID = #{u_id}
 	</select>
 
-	<select id="selectAddress" parameterType="java.lang.String"
+	<select id="selectAddressUser" parameterType="java.lang.String"
 		resultType="sist.com.vo.ZipcodeBean">
 		SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,'')BUNJI
 		FROM

@@ -1,108 +1,113 @@
 package sist.com.vo;
 
 public class SellerinfoVO {
-	private int s_no;
-	private String s_id;
-	private String s_password;
-	private String s_cname;
-	private String s_cnum;
-	private String s_rep;
-	private String s_email;
-	private String s_tel;
-	private String s_cp;
-	private int s_amount;
-	private String s_regdate;
+	private int no;
+	private String id;
+	private String password;
+	private String name;
+	private String num;
+	private String rep;
+	private String email;
+	private String tel;
+	private String cp;
+	private int amount;
+	private String regdate;
 	
 	
+	public SellerinfoVO(int no, String id, String password, String name, String num, String rep, String email,
+			String tel, String cp, int amount, String regdate) {
+		super();
+		this.no = no;
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.num = num;
+		this.rep = rep;
+		this.email = email;
+		this.tel = tel;
+		this.cp = cp;
+		this.amount = amount;
+		this.regdate = regdate;
+	}
 	public SellerinfoVO() {
 		super();
 	}
-	public SellerinfoVO(int s_no, String s_id, String s_password, String s_cname, String s_cnum, String s_rep,
-			String s_email, String s_tel, String s_cp, int s_amount, String s_regdate) {
-		super();
-		this.s_no = s_no;
-		this.s_id = s_id;
-		this.s_password = s_password;
-		this.s_cname = s_cname;
-		this.s_cnum = s_cnum;
-		this.s_rep = s_rep;
-		this.s_email = s_email;
-		this.s_tel = s_tel;
-		this.s_cp = s_cp;
-		this.s_amount = s_amount;
-		this.s_regdate = s_regdate;
+	public int getNo() {
+		return no;
 	}
-	public int getS_no() {
-		return s_no;
+	public void setNo(int no) {
+		this.no = no;
 	}
-	public void setS_no(int s_no) {
-		this.s_no = s_no;
+	public String getId() {
+		return id;
 	}
-	public String getS_id() {
-		return s_id;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public void setS_id(String s_id) {
-		this.s_id = s_id;
+	public String getPassword() {
+		return password;
 	}
-	public String getS_password() {
-		return s_password;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public void setS_password(String s_password) {
-		this.s_password = s_password;
+	public String getName() {
+		return name;
 	}
-	public String getS_cname() {
-		return s_cname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setS_cname(String s_cname) {
-		this.s_cname = s_cname;
+	public String getNum() {
+		return num;
 	}
-	public String getS_cnum() {
-		return s_cnum;
+	public void setNum(String num) {
+		this.num = num;
 	}
-	public void setS_cnum(String s_cnum) {
-		this.s_cnum = s_cnum;
+	public String getRep() {
+		return rep;
 	}
-	public String getS_rep() {
-		return s_rep;
+	public void setRep(String rep) {
+		this.rep = rep;
 	}
-	public void setS_rep(String s_rep) {
-		this.s_rep = s_rep;
+	public String getEmail() {
+		return email;
 	}
-	public String getS_email() {
-		return s_email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public void setS_email(String s_email) {
-		this.s_email = s_email;
+	public String getTel() {
+		return tel;
 	}
-	public String getS_tel() {
-		return s_tel;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
-	public void setS_tel(String s_tel) {
-		this.s_tel = s_tel;
+	public String getCp() {
+		return cp;
 	}
-	public String getS_cp() {
-		return s_cp;
+	public void setCp(String cp) {
+		this.cp = cp;
 	}
-	public void setS_cp(String s_cp) {
-		this.s_cp = s_cp;
+	public int getAmount() {
+		return amount;
 	}
-	public int getS_amount() {
-		return s_amount;
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
-	public void setS_amount(int s_amount) {
-		this.s_amount = s_amount;
+	public String getRegdate() {
+		return regdate;
 	}
-	public String getS_regdate() {
-		return s_regdate;
-	}
-	public void setS_regdate(String s_regdate) {
-		this.s_regdate = s_regdate;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 	
 	@Override
 	public String toString() {
-		return "SellerinfoVO [s_no=" + s_no + ", s_id=" + s_id + ", s_password=" + s_password + ", s_cname=" + s_cname
-				+ ", s_cnum=" + s_cnum + ", s_rep=" + s_rep + ", s_email=" + s_email + ", s_tel=" + s_tel + ", s_cp="
-				+ s_cp + ", s_amount=" + s_amount + ", s_regdate=" + s_regdate + "]";
+		return "SellerinfoVO [no=" + no + ", id=" + id + ", password=" + password + ", name=" + name + ", num=" + num
+				+ ", rep=" + rep + ", email=" + email + ", tel=" + tel + ", cp=" + cp + ", amount=" + amount
+				+ ", regdate=" + regdate + "]";
 	}
+	
+	
+	
+	
+	
 }

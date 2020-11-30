@@ -101,15 +101,15 @@ $(function(){
 	  });
 	  
 	  $("input[name='seller_login']").click(function(){
-		  //console.log($("input[name='seller_id']").val()+' '+$("input[name='seller_pw']").val());
+		  //console.log($("input[name='id']").val()+' '+$("input[name='pw']").val());
 		  
-		  var seller_id=$("input[name='seller_id']");
-		  var seller_pw=$("input[name='seller_pw']");
+		  var id=$("input[name='seller_id']");
+		  var pw=$("input[name='seller_pw']");
 		  
-		  if(seller_id.val().length==0 || seller_pw.val().length==0){
+		  if(id.val().length==0 || pw.val().length==0){
 			  alert('아이디 또는 비밀번호를 확인해주세요!');
-			  seller_id.val('');
-			  seller_pw.val('');
+			  id.val('');
+			  pw.val('');
 			  
 			  return  false;
 		  }
@@ -117,7 +117,7 @@ $(function(){
 			  url:'/web/sellerlogin.do',
 			  dataType:'text',
 			  type:'POST',
-			  data:{id:seller_id.val(), password:seller_pw.val()},
+			  data:{id:id.val(), password:pw.val()},
 			  success:function(v){
 				  //console.log(v);
 				  

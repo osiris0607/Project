@@ -284,8 +284,8 @@ ${userInfo }
     <!-- 우상단 부분 -->
     <div class="collapse navbar-collapse  navbar-right navbar-ex1-collapse" id="right">
         <ul class="nav navbar-nav" id="top-right-menubar">
-<%String id = (String)session.getAttribute("id"); 
-	System.out.println("id = " + id);
+<%String id = (String)session.getAttribute("userid"); 
+	System.out.println("user id = " + id);
 	
 	
 	if(id == null){

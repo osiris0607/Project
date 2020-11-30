@@ -89,7 +89,7 @@ $(function(){
   	<img alt="" src="/web/img/사업자.png">
   	<h3>사업자 판매회원</h3>
  		 <p style="font: #eee small;">사업자등록증을 보유한 법인 가능</p>
- 		<a href="sellerJoin.jsp" style="color: black;"><button style="width:40%;"><div style="background-color: #eee">회원가입</div></button></a>
+ 		<a href="../seller/sellerJoin.jsp" style="color: black;"><button style="width:40%;"><div style="background-color: #eee">회원가입</div></button></a>
   
   </div>
 
