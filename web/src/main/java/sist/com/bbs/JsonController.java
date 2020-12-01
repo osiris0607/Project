@@ -91,4 +91,15 @@ public class JsonController {
 		list=dao.selectAddress(dong);
 		return list;
 	}
+	
+	
+	//AdminLogin 세션저장
+		@RequestMapping(value="adminLogin.do")
+		public String adminLoginSession(HttpSession session, String id) {
+			System.out.println("어드민로그인 매핑");
+			session.setAttribute("adminid", id);
+			session.setMaxInactiveInterval(100);
+
+			return "SessionSave";
+		}
 }

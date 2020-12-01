@@ -59,27 +59,45 @@
     
 </style>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/web/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("input").on("blur", function(){
-		var id = $("input[name='adminId']").val();
-		var pw = $("input[name='adminPw']").val();
-		console.log(id + ' ' + pw);
-		
-		if(id.equals('admin') && pw.equals('admin')){
-			console.log('success');
-		}else{
-			alert('관리자의 아이디와 비밀번호를 입력하세요.');
+
+	
+	$("input#adminLogin").click(function(){
+		var id = $("input[name='adminId']");
+		var pw = $("input[name='adminPw']");
+		console.log(id.val() + ' ' + pw.val());
+
+		if(id.val().length==0 || pw.val().length==0){
+			  alert('아이디 또는 비밀번호를 확인해주세요!');
+			  id.val('');
+			  pw.val('');
+			  
+			  return  false;
+		  }
+		if(id.val() =='admin' && pw.val() == 'admin'){
+			
+			 $.ajax({
+				url:'/web/adminLogin.do',
+				dataType:'text',
+				type:'post',
+				data:{id:id.val()},
+				success:function(v){
+					console.log(v);
+					document.location.href='/web/view/admin/adminNoticeMain.jsp';
+
+				},
+				error:function(){
+					alert('ERROR');
+				}
+				
+			 });
 		}
 	});
-	$("input#adminLogin").click(function(){
-		alert('check');
-		document.location.href="../admin/adminNoticeMain.jsp";
-	});
-	
 	
 	
 });

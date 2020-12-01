@@ -71,6 +71,7 @@ public class ShopController {
 		//System.out.println("logout id = " + id);
 		session.removeAttribute("userid");
 		session.removeAttribute("sellerid");
+		session.removeAttribute("amdinid");
 		return "view/user/main";
 	}
 	
@@ -81,4 +82,7 @@ public class ShopController {
 		dao.insertSellerInfo(vo);
 		return "redirect:/view/user/main.jsp";
 	}
+	
+	
+
 }
