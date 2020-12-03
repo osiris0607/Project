@@ -32,12 +32,14 @@ public class ShopController {
 
 //Login
 	
-	/*
-	 * @RequestMapping(value="userMain.do") public String userListAction(Model
-	 * model) { model.addAttribute("uList", dao.selectUser()); return
-	 * "view/user/main";
+	
+	@RequestMapping(value="viewUserList.do", method = { RequestMethod.POST, RequestMethod.GET }) 
+	public String userListAction(Model model) { 
+		System.out.println("매핑됐냐");
+		model.addAttribute("uList", dao.selectUser()); 
+		return "view/admin/adminMemberMain";
 	}
-	 */
+	 
 	
 	@RequestMapping(value="userMain.do")
 	public String loginedUser(Model model, HttpSession session) {
