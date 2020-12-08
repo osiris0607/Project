@@ -6,33 +6,56 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="sellerIdCheck" parameterType="java.lang.String"
 		resultType="java.lang.String">
-		SELECT S_PASSWORD FROM SELLERINFO
-		WHERE S_ID=#{VALUE}
+		SELECT PASSWORD FROM SELLERINFO
+		WHERE ID=#{VALUE}
 	</select>
 
-	<select id="selectSeller" parameterType="java.lang.String"
-		resultType="sellermember">
-		SELECT * FROM SELLERINFO
+	<select id="selectSeller" resultType="sellermember">
+		SELECT *
+		FROM SELLERINFO
 	</select>
-	
-	<select id="selectSellerInfo" resultType="sellermember" parameterType="java.lang.String">
-		SELECT * FROM SELLERINFO WHERE S_ID=#{VALUE}
+
+	<select id="selectSellerInfo" resultType="sellermember"
+		parameterType="java.lang.String">
+		SELECT *
+		FROM SELLERINFO
+		WHERE ID=#{value}
 	</select>
-	
-	
-	<select id="sellerNumCheck" parameterType="java.lang.String" resultType="java.lang.String">
-		SELECT S_CNUM FROM SELLERINFO
-		WHERE S_CNUM=#{value}
+
+
+
+	<select id="sellerNumCheck" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		SELECT NUM FROM SELLERINFO
+		WHERE NUM=#{value}
 	</select>
-	
-	<select id="selectAddress" parameterType="java.lang.String" resultType="sist.com.vo.ZipcodeBean">
+
+	<select id="selectAddress" parameterType="java.lang.String"
+		resultType="sist.com.vo.ZipcodeBean">
 		SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,' ')BUNJI
-		FROM ZIPCODE
+		FROM
+		ZIPCODE
 		WHERE DONG LIKE '%'||#{VALUE}||'%'
 	</select>
-	
+
 	<insert id="insertSellerInfo" parameterType="sellermember">
-		INSERT INTO SELLERINFO(S_NO,S_ID,S_PASSWORD,S_CNAME,S_CNUM,S_REP,S_EMAIL,S_TEL,S_CP) VALUES(
+		INSERT INTO
+		SELLERINFO( NO, ID, PASSWORD, NAME, NUM, REP, EMAIL, TEL, CP)
+		VALUES(
 		SELLERINFO_SEQ.NEXTVAL,#{id},#{password},#{name},#{num},#{rep},#{email},#{tel},#{cp})
 	</insert>
+
+	<select id="selectTitleName" resultType="java.util.List">
+		SELECT PRGROUP_NAME FROM PRODUCT_GROUP WHERE PRGROUP_LEVEL=1
+	</select>
+
+
+
+
+
+
+
+
+
+
 </mapper>

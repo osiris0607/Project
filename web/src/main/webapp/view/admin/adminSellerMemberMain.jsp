@@ -66,6 +66,7 @@ height: 40px;
 </style>
 </head>
 <body>
+${sList }
 	<header>
 		<jsp:include page="../include/adminHeader.jsp" />
 	</header>
@@ -129,32 +130,19 @@ height: 40px;
 								<th>가입일자</th>
 							</tr>
 						</thead>
+						<c:forEach var="i" items="${sList }" varStatus="cnt">
 						<tbody>
 						<tr>
-							<td>1</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>${i.name }</td>
+							<td>${i.num }</td>
+							<td>${i.rep }</td>
+							<td>${i.cp }</td>
+							<td>${i.email }</td>
+							<td>${i.regdate }</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+						
 						</tbody>
+						</c:forEach>
 					</table>
 				</div>
 				<br><br>

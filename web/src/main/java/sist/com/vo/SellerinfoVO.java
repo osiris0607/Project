@@ -98,13 +98,14 @@ public class SellerinfoVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
 	@Override
 	public String toString() {
 		return "SellerinfoVO [no=" + no + ", id=" + id + ", password=" + password + ", name=" + name + ", num=" + num
 				+ ", rep=" + rep + ", email=" + email + ", tel=" + tel + ", cp=" + cp + ", amount=" + amount
 				+ ", regdate=" + regdate + "]";
 	}
+	
+	
 	
 	
 	

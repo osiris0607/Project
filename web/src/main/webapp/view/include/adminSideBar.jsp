@@ -73,7 +73,7 @@
         <li><a href="/web/view/admin/adminNoticeMain.jsp">공지사항</a></li>
         <li><a href="/web/view/admin/adminOrderMain.jsp">주문관리</a></li>
         <li><a href="/web/viewUserList.do">회원관리</a></li>
-        <li><a href="/web/view/admin/adminSellerMemberMain.jsp">판매자관리</a></li>
+        <li><a href="/web/viewSellerList.do">판매자관리</a></li>
         <li><a href="/web/view/admin/adminAnswer.jsp">1:1문의관리</a></li>
       </ul>
     </nav>

@@ -274,7 +274,7 @@ ${userInfo }
 	<!-- 좌상단 부분 -->
 	<div id="left">
 	<br>
-        <a class="navbar-brand" href="main.jsp" style="text-align: center;"><img src="/web/img/logo.png" width="140px"> </a>
+        <a class="navbar-brand" href="/web/view/user/main.jsp" style="text-align: center;"><img src="/web/img/logo.png" width="140px"> </a>
     </div>
      
     <!-- 상단중간 부분 --> 

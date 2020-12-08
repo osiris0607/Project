@@ -112,7 +112,7 @@ $(function(){
                 
                 <td>
         	 <sub style="text-align: left; margin: auto;">소고기 좋아</sub> <br>      
-                햇살받은 햇소고기 곱창</td>
+                햇살받은 햇소고기 구이용</td>
             </tr>
             <tr>
                <td>
@@ -160,7 +160,7 @@ $(function(){
    <div class="clear"></div>
       <!-- The offer section displays a banner text for promotions -->
       <div>
-         <img src="/web/img/타트체리.jpg" width="100%" height="900px">
+         <img src="/web/img/소꽃갈비살.jpg" width="100%" height="900px">
       </div>
       
       </section>

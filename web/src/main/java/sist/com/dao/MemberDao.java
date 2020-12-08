@@ -1,6 +1,8 @@
 package sist.com.dao;
 
+import java.util.HashMap;
 import java.util.List;
+
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -63,7 +65,12 @@ public class MemberDao extends SqlSessionDaoSupport {
 
 //가입판매자 조회
 	public List<SellerinfoVO> selectSeller() {
-		return this.getSqlSession().selectList("selectSeller");
+		
+		  List<SellerinfoVO> list = null; 
+		  list = this.getSqlSession().selectList("selectSeller"); 
+		  System.out.println("list = " + list); 
+		  
+		  return list;
 	}
 
 //로그인유저 조회
@@ -71,6 +78,12 @@ public class MemberDao extends SqlSessionDaoSupport {
 		return this.getSqlSession().selectOne("selectUserInfo", id);
 	}
 
+//로그인판매자 조회
+	public SellerinfoVO selectSellerInfo(String id) {
+		System.out.println("dao id = " + id);
+		return this.getSqlSession().selectOne("selectSellerInfo", id);
+	}
+	
 //판매자 회원가입 중복체크
 	public Boolean sellerIdCheck(String id) {
 		String dbPass=this.getSqlSession().selectOne("sellerIdCheck", id);
@@ -93,9 +106,8 @@ public class MemberDao extends SqlSessionDaoSupport {
 		this.getSqlSession().insert("insertSellerInfo", vo);
 	}
 
-//로그인판매자 조회
-	public SellerinfoVO selectSellerInfo(String id) {
-		return this.getSqlSession().selectOne("selectSellerInfo", id);
+	public List selectTitleName() {
+		return this.getSqlSession().selectList("selectTitleName");
 	}
 	
 }

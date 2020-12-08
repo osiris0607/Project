@@ -159,7 +159,7 @@ ${sellerInfo }
     <div class="collapse navbar-collapse  navbar-right navbar-ex1-collapse" id="right">
         <ul class="nav navbar-nav" id="top-right-menubar">
         <% String id = (String)session.getAttribute("sellerid"); 
-		  System.out.println("seller id = " + id);
+		  //System.out.println("seller id = " + id);
 		 if(id == null){
 
 		%>

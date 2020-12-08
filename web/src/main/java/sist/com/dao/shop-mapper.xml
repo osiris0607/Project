@@ -3,7 +3,6 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sist.com.vo.UserinfoVo">
-
 	<insert id="insertUserInfo"
 		parameterType="sist.com.vo.UserinfoVo">
 		INSERT INTO USERINFO
@@ -19,35 +18,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{u_email},
 		#{u_address}, #{u_tel}, #{u_cp}, 0, 0, SYSDATE, 1)
 	</insert>
-
+	
 	<select id="idChk" resultType="int" parameterType="String">
 		SELECT
 		count(U_ID) FROM USERINFO WHERE U_ID = #{u_id}
 	</select>
-
+	
 	<select id="selectAddressUser" parameterType="java.lang.String"
 		resultType="sist.com.vo.ZipcodeBean">
 		SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,'')BUNJI
 		FROM
 		ZIPCODE
 		WHERE DONG LIKE '%'||#{VALUE}||'%'
-
 	</select>
-
+	
 	<select id="userIdCheck" parameterType="java.lang.String"
 		resultType="java.lang.String">
 		SELECT U_PASSWORD FROM USERINFO
 		WHERE U_ID=#{VALUE}
 	</select>
-
+	
+	<select id="selectUserInfo" resultType="usermember"
+		parameterType="java.lang.String">
+		SELECT * FROM USERINFO WHERE U_ID=#{value}
+	</select>
+	
 	<select id="selectUser" parameterType="java.lang.String"
 		resultType="usermember">
 		SELECT * FROM USERINFO
 	</select>
 
-	<select id="selectUserInfo" resultType="usermember" parameterType="java.lang.String">
-		SELECT * FROM USERINFO WHERE U_ID=#{value}
-	</select>
 
 
 

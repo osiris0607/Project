@@ -119,7 +119,7 @@ $(function(){
 			  type:'POST',
 			  data:{id:id.val(), password:pw.val()},
 			  success:function(v){
-				  //console.log(v);
+				  console.log(v);
 				  
 				  if(v=='sucess'){
 					  document.location.href='/web/sellerMain.do';

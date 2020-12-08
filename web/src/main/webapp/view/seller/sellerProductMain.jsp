@@ -163,9 +163,9 @@ height: 40px;
 				</div>
 				<br><br>
 				<div align="center">
-					<button>선택 상품 삭제</button>
-					<button>선택 상품 수정</button>
-					<button>상품 등록</button>
+					<a href="#"><button>선택 상품 삭제</button></a>
+					<a href="#"><button>선택 상품 수정</button></a>
+					<a href="sellerProduct.jsp"><button>상품 등록</button></a>
 				</div>
 			</div>
 

@@ -47,6 +47,8 @@ section {
 </style>
 </head>
 <body>
+
+${sList }
 	<header>
 		<jsp:include page="../include/sellerHeader.jsp" />
 	</header>

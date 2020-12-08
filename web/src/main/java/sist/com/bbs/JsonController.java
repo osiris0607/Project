@@ -28,16 +28,12 @@ public class JsonController {
 
 		return dao.selectAddressUser(dong);
 	}
-
 	@RequestMapping(value = "idCheck.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public int idChkAction(@RequestParam(value = "id", required = false, defaultValue = "") String id) {
 		// data : id값이 들어옴
-
 		System.out.println("id = " + id);
-
 		// int Check = dao.idChk(id); //return 1 또는 0
 		// System.out.println("Check = " + Check);
-
 		return dao.idChk(id); // ajax data값
 	}
 //Login
@@ -48,22 +44,17 @@ public class JsonController {
 		if (dao.userIdCheck(id, password)) {
 			session.setAttribute("userid", id);
 			session.setMaxInactiveInterval(100);
-
 			return "sucess";
 		} else {
 			return "fail";
-		}
-	
+		}	
 	}
-	
-	
 	@RequestMapping(value="sellerlogin.do")
 	public String sellerloginAction(@RequestParam(value="id", required=false, defaultValue="")String id, String password, HttpSession session) {
-		/*System.out.println("Success!");
-		System.out.println(id+" "+password);
-		System.out.println(dao.sellerIdCheck(id, password)?"success":"fail");
+		System.out.println("넘어온 아디비번 : " + id+" "+password);
+		//System.out.println(dao.sellerIdCheck(id, password)?"success":"fail");
 		
-		return dao.sellerIdCheck(id, password)?"success":"fail";*/
+		//return dao.sellerIdCheck(id, password)?"success":"fail";
 		
 		if(dao.sellerIdCheck(id, password)) {
 			session.setAttribute("sellerid", id);
@@ -79,20 +70,16 @@ public class JsonController {
 	public String sellerIdCheckAction(@RequestParam(value="id",required=false) String id) {
 		return dao.sellerIdCheck(id)?"fail":"success";
 	}
-
 	@RequestMapping(value="sellerNumCheck.do")
 	public String sellerNumCheckAction(@RequestParam(value="num",required=false) String num) {
 		return dao.sellerNumCheck(num)?"fail":"success";
-	}
-	
+	}	
 	@RequestMapping(value="zipcodeSearch.do")
 	public List<ZipcodeBean> zipcodeSearch(String dong) {
 		List<ZipcodeBean>list=new ArrayList<ZipcodeBean>();
 		list=dao.selectAddress(dong);
 		return list;
 	}
-	
-	
 	//AdminLogin 세션저장
 		@RequestMapping(value="adminLogin.do")
 		public String adminLoginSession(HttpSession session, String id) {
@@ -102,4 +89,15 @@ public class JsonController {
 
 			return "SessionSave";
 		}
+		
+		
+		@RequestMapping(value="selectTitle.do")
+		public ArrayList<String> bigTitle(){
+			ArrayList<String> list = new ArrayList<String>();
+			list = (ArrayList<String>) dao.selectTitleName();
+			System.out.println("list = " + list);
+			
+			return list; 
+		}
+		
 }
