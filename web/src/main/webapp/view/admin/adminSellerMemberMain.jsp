@@ -132,8 +132,8 @@ height: 40px;
 						<c:forEach var="i" items="${sList }" varStatus="cnt">
 						<tbody>
 						<tr>
-							<td>${i.name }</td>
-							<td>${i.num }</td>
+							<td>${i.cname }</td>
+							<td>${i.cnum }</td>
 							<td>${i.rep }</td>
 							<td>${i.cp }</td>
 							<td>${i.email }</td>

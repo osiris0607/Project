@@ -137,6 +137,7 @@
 <script src="/web/js/bootstrap.min.js"></script>
 </head>
 <body>
+${sellerInfo }
 <div class="container"> 
 <!-- 상단 영역 -->
 

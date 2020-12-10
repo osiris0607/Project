@@ -2,32 +2,33 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="sist.com.vo.SellerinfoVO">
+
 
 	<select id="sellerIdCheck" parameterType="java.lang.String"
 		resultType="java.lang.String">
-		SELECT PASSWORD FROM SELLERINFO
-		WHERE ID=#{VALUE}
+		SELECT S_PASSWORD FROM SELLERINFO
+		WHERE S_ID=#{VALUE}
 	</select>
 
 	<select id="selectSeller" resultType="sellermember">
-		SELECT *
+		SELECT S_NO AS NO, S_ID AS ID, S_PASSWORD AS PASSWORD, S_CNAME AS CNAME, S_CNUM AS CNUM, S_REP AS REP, S_EMAIL AS EMAIL, S_TEL AS TEL, S_CP AS CP, S_AMOUNT AS AMOUNT, S_REGDATE AS REGDATE
 		FROM SELLERINFO
 	</select>
 
-	<select id="selectSellerInfo" resultType="sellermember"
-		parameterType="java.lang.String">
-		SELECT *
+	<select id="selectSellerInfo" resultType="sellermember" parameterType="java.lang.String">
+		SELECT S_NO AS NO, S_ID AS ID, S_PASSWORD AS PASSWORD, S_CNAME AS CNAME, S_CNUM AS CNUM, S_REP AS REP, S_EMAIL AS EMAIL, S_TEL AS TEL, S_CP AS CP, S_AMOUNT AS AMOUNT, S_REGDATE AS REGDATE
 		FROM SELLERINFO
-		WHERE ID=#{value}
+		WHERE S_ID=#{value}
 	</select>
 
 
 
 	<select id="sellerNumCheck" parameterType="java.lang.String"
 		resultType="java.lang.String">
-		SELECT NUM FROM SELLERINFO
-		WHERE NUM=#{value}
+		SELECT S_CNUM FROM SELLERINFO
+		WHERE S_CNUM=#{value}
 	</select>
 
 	<select id="selectAddress" parameterType="java.lang.String"
@@ -38,11 +39,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE DONG LIKE '%'||#{VALUE}||'%'
 	</select>
 
-	<insert id="insertSellerInfo" parameterType="sellermember">
+	<insert id="insertSellerInfo" parameterType="sellermember" >
 		INSERT INTO
-		SELLERINFO( NO, ID, PASSWORD, NAME, NUM, REP, EMAIL, TEL, CP)
+		SELLERINFO(S_NO, S_ID, S_PASSWORD, S_CNAME, S_CNUM, S_REP, S_EMAIL, S_TEL, S_CP)
 		VALUES(
-		SELLERINFO_SEQ.NEXTVAL,#{id},#{password},#{name},#{num},#{rep},#{email},#{tel},#{cp})
+		SELLERINFO_SEQ.NEXTVAL, #{id}, #{password}, #{cname}, #{cnum}, #{rep}, #{email}, #{tel}, #{cp})
 	</insert>
 
 	<select id="selectTitleName" resultType="java.util.List">
@@ -50,7 +51,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 
-	<select id="viewProduct" resultType="sist.com.ProductVO"></select>
+	<select id="viewProduct" resultType="sist.com.vo.ProductVO"></select>
 
 
 

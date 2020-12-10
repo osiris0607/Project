@@ -50,7 +50,7 @@
 	display: inline; 
 	
 	}
-	input[name='name'], input[name='password'],input[name='company'] {
+	input[name='cname'], input[name='password'],input[name='company'] {
 	width:300px;
 	}
 	input[name='id']{
@@ -289,7 +289,7 @@ $(function(){
       </div>
       <div class="form-group">
          <label for="password">비밀번호</label>
-         <input type="password" class="form-control" id="password" name="password" lang="password" laceholder="비밀번호">
+         <input type="password" class="form-control" id="password" name="password" lang="password" placeholder="비밀번호">
       </div>
       <div class="form-group">
          <label for="password">비밀번호 확인</label>
@@ -299,7 +299,7 @@ $(function(){
       </div>
       <div class="form-group">
            <label for="name">회사명</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="회사명">
+            <input type="text" class="form-control" id="name" name="cname" placeholder="회사명">
         </div>
         <div class="form-group">
            <label for="name">사업자등록번호</label>
@@ -308,7 +308,7 @@ $(function(){
            <input type="text" class="form-control" id="cp_num3" name="cp_num">
            <button type="button" id="numck" name="numck">중복확인</button>
            <input type="checkbox" hidden="hidden" id="numcb" name="numcb">
-           <input type="hidden" class="form-control" id="num" name="num">
+           <input type="hidden" class="form-control" id="num" name="cnum">
         </div>
       <div class="form-group">
            <label for="name">담당자명</label>

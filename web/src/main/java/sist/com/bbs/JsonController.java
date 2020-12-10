@@ -91,13 +91,5 @@ public class JsonController {
 		}
 		
 		
-		@RequestMapping(value="selectTitle.do")
-		public ArrayList<String> bigTitle(){
-			ArrayList<String> list = new ArrayList<String>();
-			list = (ArrayList<String>) dao.selectTitleName();
-			System.out.println("list = " + list);
-			
-			return list; 
-		}
 		
 }
