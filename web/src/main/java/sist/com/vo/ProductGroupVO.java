@@ -2,59 +2,59 @@ package sist.com.vo;
 
 public class ProductGroupVO {
 
-	private int prgroup_level;
-	private String prgroup_name;
-	private int prgroup_code;
-	private int prgroup_pcode;
+	private int prgroupLevel;
+	private String prgroupName;
+	private int prgroupCode;
+	private int prgroupPcode;
 
 	public ProductGroupVO() {
 		super();
 	}
 
-	public ProductGroupVO(int prgroup_level, String prgroup_name, int prgroup_code, int prgroup_pcode) {
+	public ProductGroupVO(int prgroupLevel, String prgroupName, int prgroupCode, int prgroupPcode) {
 		super();
-		this.prgroup_level = prgroup_level;
-		this.prgroup_name = prgroup_name;
-		this.prgroup_code = prgroup_code;
-		this.prgroup_pcode = prgroup_pcode;
+		this.prgroupLevel = prgroupLevel;
+		this.prgroupName = prgroupName;
+		this.prgroupCode = prgroupCode;
+		this.prgroupPcode = prgroupPcode;
 	}
 
-	public int getPrgroup_level() {
-		return prgroup_level;
+	public int getPrgroupLevel() {
+		return prgroupLevel;
 	}
 
-	public void setPrgroup_level(int prgroup_level) {
-		this.prgroup_level = prgroup_level;
+	public void setPrgroupLevel(int prgroupLevel) {
+		this.prgroupLevel = prgroupLevel;
 	}
 
-	public String getPrgroup_name() {
-		return prgroup_name;
+	public String getPrgroupName() {
+		return prgroupName;
 	}
 
-	public void setPrgroup_name(String prgroup_name) {
-		this.prgroup_name = prgroup_name;
+	public void setPrgroupName(String prgroupName) {
+		this.prgroupName = prgroupName;
 	}
 
-	public int getPrgroup_code() {
-		return prgroup_code;
+	public int getPrgroupCode() {
+		return prgroupCode;
 	}
 
-	public void setPrgroup_code(int prgroup_code) {
-		this.prgroup_code = prgroup_code;
+	public void setPrgroupCode(int prgroupCode) {
+		this.prgroupCode = prgroupCode;
 	}
 
-	public int getPrgroup_pcode() {
-		return prgroup_pcode;
+	public int getPrgroupPcode() {
+		return prgroupPcode;
 	}
 
-	public void setPrgroup_pcode(int prgroup_pcode) {
-		this.prgroup_pcode = prgroup_pcode;
+	public void setPrgroupPcode(int prgroupPcode) {
+		this.prgroupPcode = prgroupPcode;
 	}
 
 	@Override
 	public String toString() {
-		return "ProductGroupVO [prgroup_level=" + prgroup_level + ", prgroup_name=" + prgroup_name + ", prgroup_code="
-				+ prgroup_code + ", prgroup_pcode=" + prgroup_pcode + "]";
+		return "ProductGroupVO [prgroupLevel=" + prgroupLevel + ", prgroupName=" + prgroupName + ", prgroupCode="
+				+ prgroupCode + ", prgroupPcode=" + prgroupPcode + "]";
 	}
 
 }

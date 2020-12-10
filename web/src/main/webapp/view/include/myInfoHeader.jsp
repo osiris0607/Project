@@ -55,7 +55,6 @@ $(function() {
 </script>
 </head>
 <body>
-${userInfo }
 <section id="headerDiv">
 <table id="myInfoHeader">
 

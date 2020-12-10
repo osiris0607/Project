@@ -1,0 +1,24 @@
+[12/10, 목]
+
+1. 테이블 컬럼명 - vo 필드 속성명 - jsp 태그 name명 통일
+	* 테이블 컬럼명과 vo필드 속성명이 동일하지 않아서 매핑이 안됨 -> null파티
+	1. 새로 공유한 테이블로 갱신 (테이블 명 변경)
+	2. vo 필드 속성명 naming rule : camel case(EX. productTitle / productPrice...) 
+	3. 값을 보내는 태그 name값은 vo 필드 속성명과 동일하게.
+	
+	--> DB와 vo를 매핑하기 위해 mapper.xml에서 [db컬럼명] as [vo속성명]으로 alias 주던가, ResultMap 설정하던가 택 1 [검색요망] 
+	
+	※이미 작성한 SellerinfoVO, UserinfoVo, ZipcodeBean은 제외
+
+
+2. bean대신 vo를 사용하여 파일 생성 해주세요.
+
+3. mapper 생성시 Config.xml에 typeAlias 등록해주세요.
+
+4. 각자 완성된 기능은 효은에게 보내주시면 merge하여 push합니다. 입력 commnet 참고(조금이라도 손댄 파일의 파일명 기록하여 같이 보내주세요.)
+
+5. 깃허브에서 import한 프로젝트는 pull하여 동기화까지만 하고 push는 하지 말아주세요. (꼬임 방지)
+
+6. servlet-context에서 DB정보 변경, 로컬로 k4cl 계정 접속 후 테이블 생성 및 데이터 삽입
+
+7. 개인회원 회원가입시 onblur로 function줬으므로 바깥 한번씩 클릭해서 포커스 잃어줘야 값 들어감...^^;;

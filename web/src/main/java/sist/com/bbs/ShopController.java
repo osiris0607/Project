@@ -84,15 +84,6 @@ public class ShopController {
 		System.out.println("Model = " + model);
 		return "view/admin/adminSellerMemberMain";
 	}
-
-	@RequestMapping(value="viewProduct.do", method = { RequestMethod.POST, RequestMethod.GET })
-	public String sellerViewProduct(Model model) {
-		
-		System.out.println("상품매핑");
-		//dao
-		
-		return "/view/seller/sellerProductMain";
-	}
 	
 	
 }
