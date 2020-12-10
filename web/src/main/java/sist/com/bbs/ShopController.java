@@ -77,11 +77,6 @@ public class ShopController {
 		dao.insertSellerInfo(vo);
 		return "redirect:/view/user/main.jsp";
 	}
-
-	
-	
-	
-	
 	
 	@RequestMapping(value="viewSellerList.do", method = { RequestMethod.POST, RequestMethod.GET }) 
 	public String sellerListAction(Model model) {
@@ -90,4 +85,14 @@ public class ShopController {
 		return "view/admin/adminSellerMemberMain";
 	}
 
+	@RequestMapping(value="viewProduct.do", method = { RequestMethod.POST, RequestMethod.GET })
+	public String sellerViewProduct(Model model) {
+		
+		System.out.println("상품매핑");
+		//dao
+		
+		return "/view/seller/sellerProductMain";
+	}
+	
+	
 }

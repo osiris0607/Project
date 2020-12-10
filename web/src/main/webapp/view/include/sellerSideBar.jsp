@@ -70,10 +70,10 @@
       <h3 id="subhead"><strong>MENU</strong></h3>
       <div class="line"></div>
       <ul class="sidenav-bar">
-        <li><a href="../seller/sellerNoticeMain.jsp">공지사항</a></li>
-        <li><a href="../seller/sellerProductMain.jsp">상품관리</a></li>
-        <li><a href="../seller/sellerOrderMain.jsp">주문관리</a></li>
-        <li><a href="../seller/sellerAnswer.jsp">문의관리</a></li>
+        <li><a href="/web/view//seller/sellerNoticeMain.jsp">공지사항</a></li>
+        <li><a href="/web/viewProduct.do">상품관리</a></li>
+        <li><a href="/web/view//seller/sellerOrderMain.jsp">주문관리</a></li>
+        <li><a href="/web/view//seller/sellerAnswer.jsp">문의관리</a></li>
       </ul>
     </nav>
 	<!-- 사이드바 끝 -->

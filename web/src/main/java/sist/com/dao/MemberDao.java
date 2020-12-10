@@ -106,8 +106,5 @@ public class MemberDao extends SqlSessionDaoSupport {
 		this.getSqlSession().insert("insertSellerInfo", vo);
 	}
 
-	public List selectTitleName() {
-		return this.getSqlSession().selectList("selectTitleName");
-	}
-	
+
 }

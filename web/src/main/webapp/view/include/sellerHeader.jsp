@@ -137,8 +137,6 @@
 <script src="/web/js/bootstrap.min.js"></script>
 </head>
 <body>
-${sellerInfo }
-아아아아아아아아아ㅏ아ㅏ아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
 <div class="container"> 
 <!-- 상단 영역 -->
 

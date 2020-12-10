@@ -66,7 +66,6 @@ height: 40px;
 </style>
 </head>
 <body>
-${sList }
 	<header>
 		<jsp:include page="../include/adminHeader.jsp" />
 	</header>
