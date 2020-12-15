@@ -146,7 +146,7 @@ ${userInfo.u_name }
   	<div class="row">
       <div class="col-sm-3 col-xs-6"> 
         <div class="thumbnail">
-           <a href="#">
+           <a href="/web/view/user/productInfo.jsp">
                 <img src="/web/img/대패.jpg" alt="">
                 <div class="caption">
                   <ul class="list-unstyled block">

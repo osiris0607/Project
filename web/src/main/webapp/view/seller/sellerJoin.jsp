@@ -319,7 +319,7 @@ $(function(){
          <input type="text" class="form-control" id="email1" name="email1" lang="email" placeholder="Email Id" aria-describedby="emailHelp">@ 
          <input type="text" class="form-control" id="email2" name="email2" lang="email" placeholder="Email Addr" aria-describedby="emailHelp">
 
-         <input type="text" class="form-contorl" id="email" name="email">
+         <input type="hidden" class="form-contorl" id="email" name="email">
       </div>
      <div class="form-group">
            <label for="name">회사 주소</label>
@@ -353,14 +353,14 @@ $(function(){
              </select> -
            <input type="text" class="form-control" id="tel1" name="tel1" lang="tel"> -
            <input type="text" class="form-control" id="tel2" name="tel2" lang="tel">
-           <input type="text" id="tel" name="tel">
+           <input type="hidden" id="tel" name="tel">
         </div>
         <div class="form-group">
            <label for="name">핸드폰번호</label>
            <input type="text" class="form-control" id="hp1" name="hp1" lang="cp" value="010" > -
            <input type="text" class="form-control" id="hp2" name="hp2" lang="cp"> -
            <input type="text" class="form-control" id="hp3" name="hp3" lang="cp">
-           <input type="text" id="cp" name="cp">
+           <input type="hidden" id="cp" name="cp">
            
         </div>
         
@@ -369,7 +369,8 @@ $(function(){
            <ul><pre id="pre"><input type="checkbox" id="cball" value="all_agree"><b>전체 약관 동의하기</b></pre>
  					 <li style="list-style: none;"><input type="checkbox" class="cb" id="cb1">'이용약관'에 동의   <a href="#">이용약관 보기</a></li>
  					 <li style="list-style: none;"><input type="checkbox" class="cb" id="cb2">'개인정보 수집 및 이용안내'에 동의   <a href="#">이용약관 보기</a></li>
-				</ul></div>
+				</ul>
+				</div>
         </div>
       <!-- 
       <div class="form-group">

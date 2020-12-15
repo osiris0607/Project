@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>쌍용정보통신</title>
+<title>주소 검색</title>
 <link href="/web/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/web/css/user.css" rel="stylesheet" type="text/css" />
 <!-- <script src="/web/script/member.js"></script> -->

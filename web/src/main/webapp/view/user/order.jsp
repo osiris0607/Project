@@ -130,10 +130,10 @@ $(function(){
 
 						<tr id="carttr">
 							<td style="margin: auto; text-align: center;"><img
-								src="/web/img/대패.jpg" width="100" height="100"></td>
-							<td style="margin: auto; text-align: center;">소곱창</td>
+								src="/web/img/샤인머스캣.jpg" width="100" height="100"></td>
+							<td style="margin: auto; text-align: center;">국내산 샤인머스캣 청포도, 1.3kg(2수), 1팩</td>
 							<td style="margin: auto; text-align: center;">10개</td>
-							<td style="margin: auto; text-align: center;">99,000원</td>
+							<td style="margin: auto; text-align: center;">9,900원</td>
 							<td style="margin: auto; text-align: center;">99,000원</td>
 						</tr>
 

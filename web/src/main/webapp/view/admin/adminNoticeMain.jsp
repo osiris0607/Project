@@ -87,75 +87,45 @@ section {
 					</thead>
 					<tr>
 
-						<td><a href="#">딱히 생일이라서 신난것은 아니지만 오늘이 생일이기에 열심히 프로젝트를
-								해본다</a></td>
+						<td><a href="#">시스템 교체에 따른 비밀번호 변경 안내</a></td>
+						<td style="float: right;">2020/12/4</td>
+					</tr>
+					<tr>
+
+						<td>모바일 및 PC 결제시스템 업그레이드</td>
+						<td style="float: right;">2020/11/25</td>
+					</tr>
+					<tr>
+
+						<td>서버 업데이트 및 점검 안내</td>
 						<td style="float: right;">2020/11/24</td>
 					</tr>
 					<tr>
 
-						<td>딱히 생일이라서 신난것은 아니지만 오늘이 생일이기에 열심히 프로젝트를 해본다</td>
-						<td style="float: right;">2020/11/24</td>
+						<td>일부 서비스 일시 중단 안내</td>
+						<td style="float: right;">2020/11/23</td>
 					</tr>
 					<tr>
 
-						<td>딱히 생일이라서 신난것은 아니지만 오늘이 생일이기에 열심히 프로젝트를 해본다</td>
-						<td style="float: right;">2020/11/24</td>
+						<td>서버 업데이트 및 점검 안내</td>
+						<td style="float: right;">2020/11/23</td>
 					</tr>
 					<tr>
 
-						<td>딱히 생일이라서 신난것은 아니지만 오늘이 생일이기에 열심히 프로젝트를 해본다</td>
-						<td style="float: right;">2020/11/24</td>
+						<td>홈페이지 시스템 점검 공지 안내</td>
+						<td style="float: right;">2020/11/22</td>
 					</tr>
 					<tr>
-
-						<td>딱히 생일이라서 신난것은 아니지만 오늘이 생일이기에 열심히 프로젝트를 해본다</td>
-						<td style="float: right;">2020/11/24</td>
+						<td>[Eat in] 시스템 변경 안내</td>
+						<td style="float: right;">2020/11/21</td>
 					</tr>
 					<tr>
-
-						<td>생일에도 일하는 현대 사회인들의 처참한 삶에 대한 고뇌</td>
-						<td style="float: right;">2020/11/24</td>
+						<td>홈페이지 시스템 점검 공지 안내</td>
+						<td style="float: right;">2020/11/21</td>
 					</tr>
 					<tr>
-						<td>생일에도 일하는 현대 사회인들의 처참한 삶에 대한 고뇌</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-						<td>생일에도 일하는 현대 사회인들의 처참한 삶에 대한 고뇌</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-						<td>생일에도 일하는 현대 사회인들의 처참한 삶에 대한 고뇌</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-						<td>생일에도 일하는 현대 사회인들의 처참한 삶에 대한 고뇌</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-
-						<td>오늘부터 생일에는 정기휴가권으로 3박 4일은 줘야한다 ㅇㄱㄹㅇ ㅋㅈ?ㅇㅇㅋㅈ</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-
-						<td>오늘부터 생일에는 정기휴가권으로 3박 4일은 줘야한다 ㅇㄱㄹㅇ ㅋㅈ?ㅇㅇㅋㅈ</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-
-						<td>오늘부터 생일에는 정기휴가권으로 3박 4일은 줘야한다 ㅇㄱㄹㅇ ㅋㅈ?ㅇㅇㅋㅈ</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-
-						<td>오늘부터 생일에는 정기휴가권으로 3박 4일은 줘야한다 ㅇㄱㄹㅇ ㅋㅈ?ㅇㅇㅋㅈ</td>
-						<td style="float: right;">2020/11/24</td>
-					</tr>
-					<tr>
-
-						<td>오늘부터 생일에는 정기휴가권으로 3박 4일은 줘야한다 ㅇㄱㄹㅇ ㅋㅈ?ㅇㅇㅋㅈ</td>
-						<td style="float: right;">2020/11/24</td>
+						<td>[Eat in] 판매자 매뉴얼용 공지사항 입니다.</td>
+						<td style="float: right;">2020/11/19</td>
 					</tr>
 				</table>
 				<hr>
