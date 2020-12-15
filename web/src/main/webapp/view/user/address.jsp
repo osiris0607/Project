@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>쌍용정보통신</title>
+<title>주소 검색</title>
 <link href="/web/view/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/web/view/css/user.css" rel="stylesheet" type="text/css" />
 <!-- <script src="/web/script/member.js"></script> -->
@@ -70,11 +70,11 @@ $(function(){
       <table width="400" height="380" border="0" cellpadding="0"
          cellspacing="0">
          <tr>
-            <td valign="top" background="/web/view/img/join_pop_bg1.gif">
+            <td valign="top" background="/web/img2/join_pop_bg1.gif">
                <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                      <td height="45" colspan="3"><img
-                        src="/web/view/img/join_pop_title4.gif" width="115" height="20"></td>
+                        src="/web/img2/join_pop_title4.gif" width="115" height="20"></td>
                   </tr>
                   <tr>
                      <td width="50" height="30">&nbsp;</td>
@@ -98,7 +98,7 @@ $(function(){
                      <td>&nbsp;</td>
                      <td height="40" align="center" bgcolor="F5F5F5">주소검색 <input
                         name="dong" type="text" size="25" class="input"> <input
-                           type="image" id="search" src="/web/view/img/btn_search.gif" width="36"
+                           type="image" id="search" src="/web/img2/btn_search.gif" width="36"
                            height="18" border="0" align="absmiddle"></td>
                      <td>&nbsp;</td>
                   </tr>

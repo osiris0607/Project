@@ -66,6 +66,7 @@ input[name='post1'], input[name='post2'] {
 
 input[name='address'] {
 	width: 300px;
+	margin-left: 126px;
 }
 
 input[name='tel1'], input[name='tel2'] {
@@ -263,8 +264,8 @@ pre {
 		
 	/* 약관동의 */
 		//전체선택 체크박스 클릭 
-		$("#allCheck").click(function(){
-		 	if($("#allCheck").prop("checked")) {
+		$("#cball").click(function(){
+		 	if($("#cball").prop("checked")) {
 		 		$("input[type=checkbox]").prop("checked",true);
 			} else {
 				$("input[type=checkbox]").prop("checked",false); 
@@ -397,19 +398,15 @@ pre {
 						<input type="hidden" id="u_cp" name="u_cp" value="TestHp">
 				</div>
 
-				<div class="form-group">
-					<div style="height: 120px; background-color: #eee; width: 65%;">
-						<ul>
-							<pre id="pre">
-								<input type="checkbox" value="all_agree" id="allCheck"><b>전체 약관 동의하기</b>
-							</pre>
-							<li style="list-style: none;"><input type="checkbox">'이용약관'에
-								동의 <a href="#">이용약관 보기</a></li>
-							<li style="list-style: none;"><input type="checkbox">'개인정보
-								수집 및 이용안내'에 동의 <a href="#">이용약관 보기</a></li>
-						</ul>
-					</div>
+        <div class="form-group">
+           <div style="height: 120px; background-color: #eee; width: 65%;" >
+           <ul><pre id="pre"><input type="checkbox" id="cball" value="all_agree"><b>전체 약관 동의하기</b></pre>
+ 					 <li style="list-style: none;"><input type="checkbox" class="cb" id="cb1">'이용약관'에 동의   <a href="#">이용약관 보기</a></li>
+ 					 <li style="list-style: none;"><input type="checkbox" class="cb" id="cb2">'개인정보 수집 및 이용안내'에 동의   <a href="#">이용약관 보기</a></li>
+				</ul>
 				</div>
+        </div>
+				       
 				<!-- 
       <div class="form-group">
          <label for="message">Message</label>
