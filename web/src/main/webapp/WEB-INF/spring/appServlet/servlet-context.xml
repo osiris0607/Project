@@ -18,7 +18,7 @@
 <!-- DB연결 -->
 	<beans:bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></beans:property>
-		<beans:property name="url" value="jdbc:oracle:thin:@localhost/osiri"></beans:property>
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost/orcl"></beans:property>
 		<beans:property name="username" value="k4cl"></beans:property>
 		<beans:property name="password" value="1208"></beans:property>
 	</beans:bean>
