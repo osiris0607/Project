@@ -158,12 +158,12 @@ $(function(){
 						<c:forEach var="i" items="${uList }" varStatus="cnt">
 						<tbody>
 						<tr>
-							<td>${i.u_no }</td>
-							<td>${i.u_name }</td>
-							<td>${i.u_id }</td>
-							<td>${i.u_address }</td>
-							<td>${i.u_cp }</td>
-							<td>${i.u_regdate }</td>
+							<td>${i.no }</td>
+							<td>${i.name }</td>
+							<td>${i.id }</td>
+							<td>${i.address }</td>
+							<td>${i.cp }</td>
+							<td>${i.regdate }</td>
 						</tr>
 						
 						</tbody>

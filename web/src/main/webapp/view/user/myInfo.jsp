@@ -159,11 +159,11 @@ ${userInfo }
 <article>
       <div class="form-group">
          <label for="name">아이디</label>
-         <input type="text" class="form-control" id="name" name="id" value="${userInfo.u_id }" readonly="readonly">
+         <input type="text" class="form-control" id="name" name="id" value="${userInfo.id }" readonly="readonly">
       </div>
       <div class="form-group">
            <label for="name">이름</label>
-            <input type="text" class="form-control" id="name" name="name" value="${userInfo.u_name }" readonly="readonly">
+            <input type="text" class="form-control" id="name" name="name" value="${userInfo.name }" readonly="readonly">
         </div>
         <div class="form-group">
            <label for="name">생일</label>
@@ -173,7 +173,7 @@ ${userInfo }
         </div>
       <div class="form-group">
          <label for="email">E-Mail</label> 
-         <input type="text" class="form-control" id="email" name="email" value="${userInfo.u_email }" aria-describedby="emailHelp"  readonly="readonly"> 
+         <input type="text" class="form-control" id="email" name="email" value="${userInfo.email }" aria-describedby="emailHelp"  readonly="readonly"> 
       
             <span id="emailHelp" class="form-text text-muted" style="display: none;"  readonly="readonly">올바른 이메일 주소를 입력하세요.</span>
       </div>

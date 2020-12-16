@@ -8,27 +8,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="sellerIdCheck" parameterType="java.lang.String"
 		resultType="java.lang.String">
-		SELECT S_PASSWORD FROM SELLERINFO
-		WHERE S_ID=#{VALUE}
+		SELECT SIPASSWORD FROM SELLERINFO
+		WHERE SIID=#{VALUE}
 	</select>
 
 	<select id="selectSeller" resultType="sellermember">
-		SELECT S_NO AS NO, S_ID AS ID, S_PASSWORD AS PASSWORD, S_CNAME AS CNAME, S_CNUM AS CNUM, S_REP AS REP, S_EMAIL AS EMAIL, S_TEL AS TEL, S_CP AS CP, S_AMOUNT AS AMOUNT, S_REGDATE AS REGDATE
+		SELECT SINO AS NO, SIID AS ID, SIPASSWORD AS PASSWORD, SICNAME AS CNAME, SICNUM AS CNUM, SIREP AS REP, SIEMAIL AS EMAIL, SITEL AS TEL, SICP AS CP, SIAMOUNT AS AMOUNT, SIREGDATE AS REGDATE
 		FROM SELLERINFO
 	</select>
 
 	<select id="selectSellerInfo" resultType="sellermember" parameterType="java.lang.String">
-		SELECT S_NO AS NO, S_ID AS ID, S_PASSWORD AS PASSWORD, S_CNAME AS CNAME, S_CNUM AS CNUM, S_REP AS REP, S_EMAIL AS EMAIL, S_TEL AS TEL, S_CP AS CP, S_AMOUNT AS AMOUNT, S_REGDATE AS REGDATE
+		SELECT SINO AS NO, SIID AS ID, SIPASSWORD AS PASSWORD, SICNAME AS CNAME, SICNUM AS CNUM, SIREP AS REP, SIEMAIL AS EMAIL, SITEL AS TEL, SICP AS CP, SIAMOUNT AS AMOUNT, SIREGDATE AS REGDATE
 		FROM SELLERINFO
-		WHERE S_ID=#{value}
+		WHERE SIID=#{value}
 	</select>
-
-
 
 	<select id="sellerNumCheck" parameterType="java.lang.String"
 		resultType="java.lang.String">
-		SELECT S_CNUM FROM SELLERINFO
-		WHERE S_CNUM=#{value}
+		SELECT SICNUM FROM SELLERINFO
+		WHERE SICNUM=#{value}
 	</select>
 
 	<select id="selectAddress" parameterType="java.lang.String"
@@ -41,19 +39,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertSellerInfo" parameterType="sellermember" >
 		INSERT INTO
-		SELLERINFO(S_NO, S_ID, S_PASSWORD, S_CNAME, S_CNUM, S_REP, S_EMAIL, S_TEL, S_CP)
+		SELLERINFO(SINO, SIID, SIPASSWORD, SICNAME, SICNUM, SIREP, SIEMAIL, SITEL, SICP)
 		VALUES(
 		SELLERINFO_SEQ.NEXTVAL, #{id}, #{password}, #{cname}, #{cnum}, #{rep}, #{email}, #{tel}, #{cp})
 	</insert>
-
-	<select id="selectTitleName" resultType="java.util.List">
-		SELECT PRGROUP_NAME FROM PRODUCT_GROUP WHERE PRGROUP_LEVEL=1
-	</select>
-
-
-
-
-
 
 
 

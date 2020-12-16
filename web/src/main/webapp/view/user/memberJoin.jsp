@@ -116,8 +116,8 @@ pre {
 				//else문 대신에 return false; 가능
 				return false;
 			} else {
-				obj.u_email.value = obj.email1.value + '@' + obj.email2.value;
-				console.log(obj.u_email.value);
+				obj.email.value = obj.email1.value + '@' + obj.email2.value;
+				console.log(obj.email.value);
 			}
 		}
 
@@ -132,9 +132,9 @@ pre {
 			if (!(isNaN(obj.hp1.value) || isNaN(obj.hp2.value) || isNaN(obj.hp3.value))) {
 				if ((obj.hp2.value.length == 3 || obj.hp2.value.length == 4)
 						&& (obj.hp3.value.length == 4)) {
-					obj.u_cp.value = obj.hp1.value + '-' + obj.hp2.value + '-'
+					obj.cp.value = obj.hp1.value + '-' + obj.hp2.value + '-'
 							+ obj.hp3.value;
-					console.log('u_cp : ' + obj.u_cp.value);
+					console.log('cp : ' + obj.cp.value);
 				} else {
 					alert('글자수가 초과됐습니다. 다시 입력해주세요.');
 					obj.hp1.value = '';
@@ -155,9 +155,9 @@ pre {
 			if (!(isNaN(obj.tel0.value) || isNaN(obj.tel1.value) || isNaN(obj.tel2.value))) {
 				if ((obj.tel1.value.length == 3 || obj.tel1.value.length == 4)
 						&& (obj.tel2.value.length == 4)) {
-					obj.u_tel.value = obj.tel0.value + '-' + obj.tel1.value + '-'
+					obj.tel.value = obj.tel0.value + '-' + obj.tel1.value + '-'
 							+ obj.tel2.value;
-					console.log('u_tel : ' + obj.u_tel.value);
+					console.log('tel : ' + obj.tel.value);
 				} else {
 					alert('글자수가 초과됐습니다. 다시 입력해주세요.');
 					$("#tel0 option:eq(0)").prop("selected", true);
@@ -177,19 +177,19 @@ pre {
 		$("input:button[name='postSend']").click(function(){
 			window.open("address.jsp","id","left=100,top=50,width=400,height=350");
 		});
-		
+/* 		
 		$("input[name='address']").on("blur",function(){
 			var address = $("input[name='address']").val();
 			$("#u_address").val(address);
 			
-		});
+		}); */
 	
 	/* 이름 */
-		$("input[name='name']").on("blur",function(){
+/* 		$("input[name='name']").on("blur",function(){
 			var name = $("input[name='name']").val();
 			$("#u_name").val(name);
 			console.log($("#u_name").val());
-		});
+		}); */
 	
 	/* 아이디 중복확인 */
 		$("#alert-success_idCheck").hide();
@@ -198,7 +198,7 @@ pre {
 							//alert('아쳌');
 							var id = $("#id").val();
 							console.log(id); //입력한 아이디
-							$("#u_id").val(id);
+							$("#id").val(id);
 							$.ajax({
 								url : '/web/idCheck.do',
 								type : 'POST',
@@ -226,24 +226,28 @@ pre {
 		$("#alert-success").hide();
 		$("#alert-danger").hide();
 		$("input#password_check").keyup(function() {
-			var password = $("#password").val();
+			var password1 = $("#password1").val();
 			var password_check = $("#password_check").val();
-			if (password != "" || password_check != "") {
-				if (password == password_check) {
-					$("#u_password").val(password_check);
+			if (password1 != "" || password_check != "") {
+				if (password1 == password_check) {
+					$("#password").val(password_check);
+					console.log($("#password").val());
+					
 					$("#alert-success").show();
 					$("#alert-danger").hide();
 				} else {
 					$("#alert-success").hide();
 					$("#alert-danger").show();
 				}
+			}else{
+				alert('비밀번호를 입력하세요.');
 			}
 		});
 
 	/* 성별체크 */
 		$("input:radio[name='gender']").click(function() {
 			var checked_radio = $('input:radio[name=gender]:checked').val(); // 선택된 radio의 value 가져오기
-			$("#u_gender").val(checked_radio);
+			$("#gender").val(checked_radio);
 	
 
 		});
@@ -253,11 +257,11 @@ pre {
 					//console.log($("input[name=year]").val());
 					//console.log($("input[name=year]").val());
 					//console.log($("input[name=day]").val());
-					var birth = $("input[name=year]").val()+'/'
-							+ $("input[name=month]").val()+'/'
+					var birth = $("input[name=year]").val()
+							+ $("input[name=month]").val()
 							+ $("input[name=day]").val();
 
-					$("#u_birth").val(birth);
+					$("#birth").val(birth);
 
 				});
 		
@@ -295,7 +299,6 @@ pre {
 				<div class="form-group">
 					<label for="name">아이디</label><span id="idCheckSP"></span> 
 					<input type="text" class="form-control" id="id" name="id" placeholder="아이디">
-					<input type="hidden" class="form-control" id="u_id" name="u_id" value=TestId>
 					<button class="idChk" type="button" id="idChk">중복확인</button>
 				</div>
 				<div class="alert alert-success" id="alert-success_idCheck"
@@ -304,12 +307,12 @@ pre {
 					
 				<div class="form-group">
 					<label for="password">비밀번호</label> 
-					<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
+					<input type="password" class="form-control" id="password1" name="password1" placeholder="비밀번호">
 				</div>
 				<div class="form-group">
 					<label for="password">비밀번호 확인</label> 
-					<input type="password" class="form-control" id="password_check" name="password" placeholder="비밀번호 확인">
-					<input type="hidden" class="form-control" id="u_password" name="u_password" value="TestPw">
+					<input type="password" class="form-control" id="password_check" name="password_check" placeholder="비밀번호 확인">
+					<input type="text" class="form-control" id="password" name="password" value="TestPw">
 				</div>
 				
 				<div class="alert alert-success" id="alert-success"
@@ -320,13 +323,12 @@ pre {
 				<div class="form-group">
 					<label for="name">이름</label> 
 					<input type="text" class="form-control" id="name" name="name" placeholder="이름">
-					<input type="hidden" class="form-control" id="u_name" name="u_name" value="TestName">
 				</div>
 				<div class="form-group">
 					<label for="name">성별</label> 
 					<input type="radio" name="gender" value="남자" />남성 
 					<input type="radio" name="gender" value="여자" />여성
-					<input type="hidden" name="u_gender" id="u_gender" value="TestGender">
+					<input type="text" name="gender" id="gender" value="TestGender">
 				</div>
 				<div class="form-group">
 					<label for="name">생일</label> <input type="text"
@@ -334,7 +336,7 @@ pre {
 					<input type="text" class="form-control" id="month" name="month"
 						placeholder="월">월 <input type="text" class="form-control"
 						id="day" name="day" placeholder="일">일 
-						<input type="hidden" class="form-control" id="u_birth" name="u_birth" value="TestBirth">
+						<input type="text" class="form-control" id="birth" name="birth" value="TestBirth">
 				</div>
 				<div class="form-group">
 					<label for="email">E-Mail</label> <input type="text"
@@ -349,7 +351,7 @@ pre {
 						<option value="google.com">google.com</option>
 						<option value="direct">직접 입력하기</option>
 					</select> 
-					<input type="hidden" name="u_email" id="u_email" value="TestEmail">
+					<input type="text" name="email" id="email" value="TestEmail">
 					<span id="emailHelp" class="form-text text-muted"
 						style="display: none;">올바른 이메일 주소를 입력하세요.</span>
 				</div>
@@ -361,8 +363,7 @@ pre {
 					<input type="button" id="postSend" name="postSend" value="주소검색">
 					<!-- <button id="postSend">주소검색</button> -->
 					<br>
-					<input type="text" class="form-control" id="address" name="address" placeholder="상세주소">
-					<input type="hidden" class="form-control" id="u_address" name="u_address" value="TestAddress">
+					<input type="text" class="form-control" id="address" name="address" placeholder="주소" readonly="readonly">
 				
 				</div>
 				<div class="form-group">
@@ -388,14 +389,14 @@ pre {
 					</select> - 
 					<input type="text" class="form-control" id="tel1" name="tel1">- 
 					<input type="text" class="form-control" id="tel2" name="tel2" onblur="telCheck()">
-					<input type="hidden" class="form-control" id="u_tel" name="u_tel" value="TestTel">
+					<input type="text" class="form-control" id="tel" name="tel" value="TestTel">
 				</div>
 				<div class="form-group">
 					<label for="name">핸드폰번호</label> <input type="text"
 						class="form-control" id="hp1" name="hp1" value="010"> - <input
 						type="text" class="form-control" id="hp2" name="hp2"> - <input
 						type="text" class="form-control" id="hp3" name="hp3" onblur="hpCheck()">
-						<input type="hidden" id="u_cp" name="u_cp" value="TestHp">
+						<input type="text" id="cp" name="cp" value="TestHp">
 				</div>
 
         <div class="form-group">
