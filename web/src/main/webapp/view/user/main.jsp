@@ -88,13 +88,14 @@
 <script type="text/javascript">
 $(function(){
 	
-	
-	
-	
 });
 </script>
 </head>
 <body>
+<!-- vo통채로 세션 저장해서 개별데이터 갖다 쓸 수 있음 -->
+${userInfo.id }
+${userInfo.name }
+
 <main>
 <jsp:include page="../include/header.jsp" />
 <div class="page">
@@ -145,7 +146,7 @@ $(function(){
   	<div class="row">
       <div class="col-sm-3 col-xs-6"> 
         <div class="thumbnail">
-           <a href="#">
+           <a href="/web/view/user/productInfo.jsp">
                 <img src="/web/img/대패.jpg" alt="">
                 <div class="caption">
                   <ul class="list-unstyled block">

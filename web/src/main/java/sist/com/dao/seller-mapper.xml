@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sist.com.vo.SellerinfoVO">
+
+
+	<select id="sellerIdCheck" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		SELECT SIPASSWORD FROM SELLERINFO
+		WHERE SIID=#{VALUE}
+	</select>
+
+	<select id="selectSeller" resultType="sellermember">
+		SELECT SINO AS NO, SIID AS ID, SIPASSWORD AS PASSWORD, SICNAME AS CNAME, SICNUM AS CNUM, SIREP AS REP, SIEMAIL AS EMAIL, SITEL AS TEL, SICP AS CP, SIAMOUNT AS AMOUNT, SIREGDATE AS REGDATE
+		FROM SELLERINFO
+	</select>
+
+	<select id="selectSellerInfo" resultType="sellermember" parameterType="java.lang.String">
+		SELECT SINO AS NO, SIID AS ID, SIPASSWORD AS PASSWORD, SICNAME AS CNAME, SICNUM AS CNUM, SIREP AS REP, SIEMAIL AS EMAIL, SITEL AS TEL, SICP AS CP, SIAMOUNT AS AMOUNT, SIREGDATE AS REGDATE
+		FROM SELLERINFO
+		WHERE SIID=#{value}
+	</select>
+
+	<select id="sellerNumCheck" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		SELECT SICNUM FROM SELLERINFO
+		WHERE SICNUM=#{value}
+	</select>
+
+	<select id="selectAddress" parameterType="java.lang.String"
+		resultType="sist.com.vo.ZipcodeBean">
+		SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,' ')BUNJI
+		FROM
+		ZIPCODE
+		WHERE DONG LIKE '%'||#{VALUE}||'%'
+	</select>
+
+	<insert id="insertSellerInfo" parameterType="sellermember" >
+		INSERT INTO
+		SELLERINFO(SINO, SIID, SIPASSWORD, SICNAME, SICNUM, SIREP, SIEMAIL, SITEL, SICP)
+		VALUES(
+		SELLERINFO_SEQ.NEXTVAL, #{id}, #{password}, #{cname}, #{cnum}, #{rep}, #{email}, #{tel}, #{cp})
+	</insert>
+
+
+
+
+</mapper>

@@ -52,7 +52,7 @@
    <tr>
      <th style="text-align: center;" rowspan="2"><img src="/web/bootEx1/02/rose.jpg" alt="장미" class="img-circle" width="100px" height="100px"></th>
   	 <th>&nbsp;&nbsp;
-     <th style="text-align: left "> <h3><strong>판매자</strong> 페이지입니다.</h3>
+     <th style="text-align: left "> <h3><strong>판매자 ${sellerInfo.cname }님</strong> 페이지입니다.</h3>
    </th>
    </tr>
 </thead>

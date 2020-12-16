@@ -10,9 +10,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- DB설정(Connection) -->
 	<typeAliases>
 		<typeAlias type="sist.com.vo.UserinfoVo" alias="usermember"/>
+		<typeAlias type="sist.com.vo.SellerinfoVO" alias="sellermember"/>
 	</typeAliases>
+	
+	
 	<mappers>
 		<mapper resource="sist/com/dao/shop-mapper.xml" />
+		<mapper resource="sist/com/dao/seller-mapper.xml" />
 	</mappers>
 </configuration>
 

@@ -64,8 +64,34 @@ table tbody tr{
 height: 40px;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	//제약조건 : seconddate가 firstdate보다 커야함
+	$("input[type='date']").on("blur", function(){
+		
+		var firstdate = $("input[name='firstdate']").val();
+		var seconddate = $("input[name='seconddate']").val();
+	
+		console.log(firstdate + '~' + seconddate);
+		
+		
+		
+	});
+	
+	$("button#search").click(function(){
+		var text = $("input#searchText").val();
+		console.log(text);
+	});
+	
+	
+});
+
+</script>
 </head>
 <body>
+
 	<header>
 		<jsp:include page="../include/adminHeader.jsp" />
 	</header>
@@ -84,7 +110,7 @@ height: 40px;
 			<div class="table-responsive" style="width: 72%; margin-left: 20%;">
 
 				<h4>
-					<strong>판매자관리</strong>
+					<strong>회원관리</strong>
 				</h4>
 				<hr style="float: left; width: 70%;">
 				<br> <br> <br>
@@ -94,67 +120,54 @@ height: 40px;
 
 				<!-- 여기서부터 본문 내용 넣기 -->
 
-				<form name="dateFrm" action="" method="post">
+				<form name="dateFrm" action="#" method="post">
 					<div class="form-group">
-						<label for="date_label">가입기간</label> <input type='date'
-							class="form-control" name='firstdate' value='2020-01-01' /> ~ <input
-							type='date' class="form-control" name='seconddate'
-							value='2020-11-14' />
+						<label for="date_label">가입기간</label> 
+						<input type='date' class="form-control" name='firstdate' id="firstdate" /> ~ 
+						<input type='date' class="form-control" name='seconddate' id="seconddate" />
 					</div>
 					<div class="form-group">
 						<label for="date_label">상세조건</label>
 						<div class="btn-group">
 							<button type="button" class="btn btn-default dropdown-toggle"
 								data-toggle="dropdown">
-								업체명 <span class="caret"></span>
+								아이디 <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">담당자명</a></li>
-								<li><a href="#">사업자등록번호</a></li>
+								<li><a href="#">회원번호</a></li>
+								<li><a href="#">휴대전화</a></li>
 							</ul>
 						</div>
-						<input type="text" class="form-control" name="text"placeholder="내용을 입력하세요">
-						<button style="width: 80px; height: 32px; vertical-align: middle">검색</button>
+						<input type="text" class="form-control" name="text" id="searchText" placeholder="내용을 입력하세요">
+						<button id="search" name="search" style="width: 80px; height: 32px; vertical-align: middle">검색</button>
 					</div>
 				</form>
 				<div>
 					<table class="table">
+					
 						<thead>
 							<tr>
-								<th>업체명</th>
-								<th>사업자등록번호</th>
-								<th>담당자명</th>
-								<th>연락처</th>
-								<th>이메일</th>
+								<th>NO</th>
+								<th>이름</th>
+								<th>아이디</th>
+								<th>주소</th>
+								<th>휴대전화</th>
 								<th>가입일자</th>
 							</tr>
 						</thead>
+						<c:forEach var="i" items="${uList }" varStatus="cnt">
 						<tbody>
 						<tr>
-							<td>1</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>${i.no }</td>
+							<td>${i.name }</td>
+							<td>${i.id }</td>
+							<td>${i.address }</td>
+							<td>${i.cp }</td>
+							<td>${i.regdate }</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+						
 						</tbody>
+						</c:forEach>						
 					</table>
 				</div>
 				<br><br>

@@ -68,17 +68,69 @@
 <script src="/web/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("input#userLogin").click(function(){
-		alert('check');
-		document.location.href="../user/myPage.jsp";
-	});
-	$("input#sellerLogin").click(function(){
-		alert('check');
-		document.location.href="../seller/sellerNoticeMain.jsp";
-	});
-	
-	
-	
+	  $("input[name='user_login']").click(function(){
+		  //console.log($("input[name='user_id']").val()+' '+$("input[name='user_pw']").val());
+		  
+		  var user_id=$("input[name='user_id']");
+		  var user_pw=$("input[name='user_pw']");
+		  
+		  if(user_id.val().length==0 || user_pw.val().length==0){
+			  alert('아이디 또는 비밀번호를 확인해주세요!');
+			  user_id.val('');
+			  user_pw.val('');
+			  
+			  return  false;
+		  }
+		  $.ajax({
+			  url:'/web/userlogin.do',
+			  dataType:'text',
+			  type:'POST',
+			  data:{id:user_id.val(), password:user_pw.val()},
+			  success:function(v){
+				  console.log(v);
+				  
+				  if(v=='sucess'){
+					  document.location.href='/web/userMain.do';
+				  } else {
+					  alert('로그인 실패!');
+				  }
+			  }, error:function(){
+				  alert('에러ㅔ어레얼에ㅓ에러에ㅓㄹ');
+			  }
+		  });
+	  });
+	  
+	  $("input[name='seller_login']").click(function(){
+		  //console.log($("input[name='id']").val()+' '+$("input[name='pw']").val());
+		  
+		  var id=$("input[name='seller_id']");
+		  var pw=$("input[name='seller_pw']");
+		  
+		  if(id.val().length==0 || pw.val().length==0){
+			  alert('아이디 또는 비밀번호를 확인해주세요!');
+			  id.val('');
+			  pw.val('');
+			  
+			  return  false;
+		  }
+		  $.ajax({
+			  url:'/web/sellerlogin.do',
+			  dataType:'text',
+			  type:'POST',
+			  data:{id:id.val(), password:pw.val()},
+			  success:function(v){
+				  console.log(v);
+				  
+				  if(v=='sucess'){
+					  document.location.href='/web/sellerMain.do';
+				  } else {
+					  alert('로그인 실패!');
+				  }
+			  }, error:function(){
+				  alert('에러ㅔ어레얼에ㅓ에러에ㅓㄹ');
+			  }
+		  });
+	  });
 });
 </script>
 </head>
@@ -100,26 +152,26 @@ $(function(){
       <h3>개인 회원 </h3>
 		<form action="#" name="#">
 			<div class="form-div">
-			<input type="text" autofocus="autofocus"   placeholder="ID"><br>
-			<input type="password"  placeholder="Password"><br>
+			<input type="text" autofocus="autofocus" placeholder="ID" id="user_id" name="user_id"><br>
+			<input type="password"  placeholder="Password" id="user_pw" name="user_pw"><br>
 			<br>
-			<input type="checkbox" value="id_save">아이디저장<a href="../user/memberJoin.jsp" class="join">회원가입</a>
+			<input type="checkbox" value="id_save">아이디저장<a href="memberJoin.jsp" class="join">회원가입</a>
 			<br><br>
 			</div>
-			<input type="button" value="로그인" id="userLogin">
+			<input type="button" value="로그인" name="user_login">
 		</form>
 	</div>
     <div class="tab-pane fade" id="tab1">
       <h3>판매 회원 </h3>
 		<form action="#" name="#">
 			<div class="form-div">
-			<input type="text" autofocus="autofocus"   placeholder="ID"><br>
-			<input type="password"  placeholder="Password"><br>
+			<input type="text" autofocus="autofocus" placeholder="ID" id="seller_id" name="seller_id"><br>
+			<input type="password" placeholder="Password" id="seller_pw" name="seller_pw"><br>
 			<br>
-			<input type="checkbox" value="id_save">아이디저장<a href="../seller/sellerJoin.jsp" class="join">회원가입</a>
+			<input type="checkbox" value="id_save">아이디저장<a href="sellerJoin.jsp" class="join">회원가입</a>
 			<br><br>
 			</div>
-			<input type="button" value="로그인" id="sellerLogin">
+			<input type="button" value="로그인" name="seller_login">
 		</form>
 	
 	</div>

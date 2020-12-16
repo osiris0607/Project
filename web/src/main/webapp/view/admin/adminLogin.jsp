@@ -59,16 +59,45 @@
     
 </style>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/web/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("input#adminLogin").click(function(){
-		alert('check');
-		document.location.href="../admin/adminNoticeMain.jsp";
-	});
+
 	
+	$("input#adminLogin").click(function(){
+		var id = $("input[name='adminId']");
+		var pw = $("input[name='adminPw']");
+		console.log(id.val() + ' ' + pw.val());
+
+		if(id.val().length==0 || pw.val().length==0){
+			  alert('아이디 또는 비밀번호를 확인해주세요!');
+			  id.val('');
+			  pw.val('');
+			  
+			  return  false;
+		  }
+		if(id.val() =='admin' && pw.val() == 'admin'){
+			
+			 $.ajax({
+				url:'/web/adminLogin.do',
+				dataType:'text',
+				type:'post',
+				data:{id:id.val()},
+				success:function(v){
+					console.log(v);
+					document.location.href='/web/view/admin/adminNoticeMain.jsp';
+
+				},
+				error:function(){
+					alert('ERROR');
+				}
+				
+			 });
+		}
+	});
 	
 	
 });
@@ -87,13 +116,13 @@ $(function(){
     <div class="loginBox">  
     <div class="tab-pane">
      	 <h3><strong>관리자</strong></h3><br>
-			<form action="#" name="#">
+			<form action="#" name="adminRegistForm">
 				<div class="form-div" >
-				<input type="text" autofocus="autofocus" placeholder="ID" style="width: 250px;"><br>
-				<input type="password"  placeholder="Password" style="width: 250px;"><br>
+				<input type="text" id="adminId" name="adminId" autofocus="autofocus" placeholder="ID" style="width: 250px;"><br>
+				<input type="password" id="adminPw" name="adminPw" placeholder="Password" style="width: 250px;"><br>
 				<br>
 				<input type="checkbox" value="id_save">아이디저장
-				<a href="#" class="join">회원가입</a>
+				<!-- <a href="#" class="join">회원가입</a> -->
 				<br><br>
 				</div>
 				<input type="button" value="LOGIN" id="adminLogin">

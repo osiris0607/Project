@@ -7,6 +7,7 @@
 <html>
 <head>
 
+
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link href="/web/css/bootstrap.min.css" rel="stylesheet"> 
@@ -272,7 +273,7 @@
 	<!-- 좌상단 부분 -->
 	<div id="left">
 	<br>
-        <a class="navbar-brand" href="main.jsp" style="text-align: center;"><img src="/web/img/logo.png" width="140px"> </a>
+        <a class="navbar-brand" href="/web/view/user/main.jsp" style="text-align: center;"><img src="/web/img/logo.png" width="140px"> </a>
     </div>
      
     <!-- 상단중간 부분 --> 
@@ -282,11 +283,20 @@
     <!-- 우상단 부분 -->
     <div class="collapse navbar-collapse  navbar-right navbar-ex1-collapse" id="right">
         <ul class="nav navbar-nav" id="top-right-menubar">
-          <li><a href="../user/login_toggleTap.jsp">로그인</a></li>
-          <li><a href="../user/joinSelect.jsp">회원가입</a></li>
-          <li><a href="../user/myPage.jsp">마이페이지</a></li>	<!-- 로그인 session 유지시 이동하게끔 추후 -->
-          <li><a href="../user/cart.jsp">장바구니</a></li>
-          <li><a href="../admin/adminLogin.jsp">관리자페이지</a></li>
+<%String id = (String)session.getAttribute("userid"); 
+	System.out.println("user id = " + id);
+	
+	
+	if(id == null){
+%>
+          <li><a href="/web/view/user/login_toggleTap.jsp">로그인</a></li>
+          <li><a href="/web/view/user/joinSelect.jsp">회원가입</a></li>
+		<%}else{ %>
+          <li><a href="/web/logout.do">로그아웃</a></li>
+         <%} %>
+          <li><a href="/web/view/user/myPage.jsp">마이페이지</a></li>	<!-- 로그인 session 유지시 이동하게끔 추후 -->
+          <li><a href="/web/view/user/cart.jsp">장바구니</a></li>
+          <li><a href="/web/view/admin/adminLogin.jsp">관리자페이지</a></li>
         </ul>
         <br><br>
    	 <div id=search>

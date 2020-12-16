@@ -49,7 +49,9 @@ public class ZipcodeBean {
 
 		@Override
 		public String toString() {
-			return "ZipcodeBean [zipcode=" + zipcode + ", sido=" + sido + ", gugun=" + gugun + ", dong=" + dong + ", bunji="
+			return "ZipcodeBean [zipcode=" + zipcode + ", "
+					+ "sido=" + sido + ", gugun=" + gugun + ", "
+					+ "dong=" + dong + ", bunji="
 					+ bunji + "]";
 		}
 

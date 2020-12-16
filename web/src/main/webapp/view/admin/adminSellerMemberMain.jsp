@@ -84,7 +84,7 @@ height: 40px;
 			<div class="table-responsive" style="width: 72%; margin-left: 20%;">
 
 				<h4>
-					<strong>회원관리</strong>
+					<strong>판매자관리</strong>
 				</h4>
 				<hr style="float: left; width: 70%;">
 				<br> <br> <br>
@@ -106,11 +106,11 @@ height: 40px;
 						<div class="btn-group">
 							<button type="button" class="btn btn-default dropdown-toggle"
 								data-toggle="dropdown">
-								아이디 <span class="caret"></span>
+								업체명 <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">회원번호</a></li>
-								<li><a href="#">휴대전화</a></li>
+								<li><a href="#">담당자명</a></li>
+								<li><a href="#">사업자등록번호</a></li>
 							</ul>
 						</div>
 						<input type="text" class="form-control" name="text"placeholder="내용을 입력하세요">
@@ -121,40 +121,27 @@ height: 40px;
 					<table class="table">
 						<thead>
 							<tr>
-								<th>NO</th>
-								<th>이름</th>
-								<th>아이디</th>
-								<th>주소</th>
-								<th>휴대전화</th>
+								<th>업체명</th>
+								<th>사업자등록번호</th>
+								<th>담당자명</th>
+								<th>연락처</th>
+								<th>이메일</th>
 								<th>가입일자</th>
 							</tr>
 						</thead>
+						<c:forEach var="i" items="${sList }" varStatus="cnt">
 						<tbody>
 						<tr>
-							<td>1</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>${i.cname }</td>
+							<td>${i.cnum }</td>
+							<td>${i.rep }</td>
+							<td>${i.cp }</td>
+							<td>${i.email }</td>
+							<td>${i.regdate }</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+						
 						</tbody>
+						</c:forEach>
 					</table>
 				</div>
 				<br><br>
