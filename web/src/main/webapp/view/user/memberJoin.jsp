@@ -97,8 +97,20 @@ pre {
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="/web/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
 	/* 이메일체크 */
+<<<<<<< HEAD
+	function emailCheck() {
+		var obj = document.registerForm
+		console.log(obj.email3.value);
+
+		if (obj.email3.value == 'direct') { //direct선택 시
+			obj.email2.disabled = false; //버튼 활성화(이메일 주소 입력칸 직접 입력할 수 있도록)
+			obj.email2.value = ''; //direct가 아닐 때는 입력칸 초기화 하고 있는 주소를 선택
+		} else {
+			obj.email2.value = obj.email3.value; //메일주소에 선택한 주소가 대입
+			obj.email2.disabled = true; //버튼 비활성화(이메일 주소를 직접 입력할 수 없음)
+
+=======
 		function emailCheck() {
 			var obj = document.registerForm
 			console.log(obj.email3.value);
@@ -119,9 +131,34 @@ pre {
 				obj.email.value = obj.email1.value + '@' + obj.email2.value;
 				console.log(obj.email.value);
 			}
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 		}
+		if (!obj.email1.value || !obj.email2.value) {
+			alert('이메일을 입력해주세요.');
+			//else문 대신에 return false; 가능
+			return false;
+		} else {
+			obj.u_email.value = obj.email1.value + '@' + obj.email2.value;
+			console.log(obj.u_email.value);
+		}
+	}
 
 	/* 핸드폰번호 체크 */
+<<<<<<< HEAD
+	function hpCheck() {
+		var obj = document.registerForm;
+		console.log(obj.hp1.value + '-' + obj.hp2.value + '-' + obj.hp3.value);
+		//		console.log('hp1 : ' + isNaN(obj.hp1.value)); //전화번호는 숫자만 들어올 수 있게
+		//		console.log('hp2 : ' + isNaN(obj.hp2.value)); //앞자리 3자리 or 4자리
+		//		console.log('hp3 : ' + isNaN(obj.hp3.value)); //뒷자리 4자리
+
+		if (!(isNaN(obj.hp1.value) || isNaN(obj.hp2.value) || isNaN(obj.hp3.value))) {
+			if ((obj.hp2.value.length == 3 || obj.hp2.value.length == 4)
+					&& (obj.hp3.value.length == 4)) {
+				obj.u_cp.value = obj.hp1.value + '-' + obj.hp2.value + '-'
+						+ obj.hp3.value;
+				console.log('u_cp : ' + obj.u_cp.value);
+=======
 		function hpCheck() {
 			var obj = document.registerForm;
 			console.log(obj.hp1.value + '-' + obj.hp2.value + '-' + obj.hp3.value);
@@ -164,37 +201,112 @@ pre {
 					obj.tel1.value = '';
 					obj.tel2.value = '';
 				}
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 			} else {
-				alert('숫자만 입력해주세요.');
+				alert('글자수가 초과됐습니다. 다시 입력해주세요.');
+				obj.hp1.value = '';
+				obj.hp2.value = '';
+				obj.hp3.value = '';
+			}
+		} else {
+			alert('숫자만 입력해주세요.');
+			obj.hp1.value = '';
+			obj.hp2.value = '';
+			obj.hp3.value = '';
+		}
+	}
+	/* 전화번호 체크 */
+	function telCheck() {
+		var obj = document.registerForm;
+		console.log(obj.tel0.value + '-' + obj.tel1.value + '-'
+				+ obj.tel2.value);
+		if (!(isNaN(obj.tel0.value) || isNaN(obj.tel1.value) || isNaN(obj.tel2.value))) {
+			if ((obj.tel1.value.length == 3 || obj.tel1.value.length == 4)
+					&& (obj.tel2.value.length == 4)) {
+				obj.u_tel.value = obj.tel0.value + '-' + obj.tel1.value + '-'
+						+ obj.tel2.value;
+				console.log('u_tel : ' + obj.u_tel.value);
+			} else {
+				alert('글자수가 초과됐습니다. 다시 입력해주세요.');
+				$("#tel0 option:eq(0)").prop("selected", true);
 				obj.tel1.value = '';
 				obj.tel2.value = '';
 			}
+		} else {
+			alert('숫자만 입력해주세요.');
+			obj.tel1.value = '';
+			obj.tel2.value = '';
 		}
-
+	}
 
 	$(function() {
+<<<<<<< HEAD
+		/* 주소 */
+		$("input:button[name='postSend']").click(
+				function() {
+					window.open("address.jsp", "id",
+							"left=100,top=50,width=400,height=350");
+				});
+
+		$("input[name='address']").on("blur", function() {
+=======
 	/* 주소 */
 		$("input:button[name='postSend']").click(function(){
 			window.open("address.jsp","id","left=100,top=50,width=400,height=350");
 		});
 /* 		
 		$("input[name='address']").on("blur",function(){
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 			var address = $("input[name='address']").val();
 			$("#u_address").val(address);
+<<<<<<< HEAD
+
+		});
+
+		/* 이름 */
+		$("input[name='name']").on("blur", function() {
+=======
 			
 		}); */
 	
 	/* 이름 */
 /* 		$("input[name='name']").on("blur",function(){
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 			var name = $("input[name='name']").val();
 			$("#u_name").val(name);
 			console.log($("#u_name").val());
+<<<<<<< HEAD
+		});
+
+		/* 아이디 중복확인 */
+=======
 		}); */
 	
 	/* 아이디 중복확인 */
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 		$("#alert-success_idCheck").hide();
 		$("#alert-danger_idCheck").hide();
 		$("#idChk").click(function() {
+<<<<<<< HEAD
+			//alert('아쳌');
+			var id = $("#id").val();
+			console.log(id); //입력한 아이디
+			$("#u_id").val(id);
+			$.ajax({
+				url : '/web/idCheck.do',
+				type : 'POST',
+				dataType : 'json', //서버로부터 내가 받는 데이터의 타입
+				//contentType : 'text/plain; charset=utf-8;',//내가 서버로 보내는 데이터의 타입
+				data : {
+					id : id
+				},
+				success : function(data) { //
+					console.log("data = " + data);
+					if (data == 0) {
+						console.log('아이디 없음');
+						$("#alert-success_idCheck").show();
+						$("#alert-danger_idCheck").hide();
+=======
 							//alert('아쳌');
 							var id = $("#id").val();
 							console.log(id); //입력한 아이디
@@ -211,18 +323,20 @@ pre {
 										console.log('아이디 없음');
 										$("#alert-success_idCheck").show();
 										$("#alert-danger_idCheck").hide();
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 
-									} else {
-										console.log('아이디 있음');
-										$("#alert-success_idCheck").hide();
-										$("#alert-danger_idCheck").show();											}
-									},
-								error : function() {
-										alert('ERROR!');
-								}
-							});
-						});
-	/* 비밀번호 확인 */
+					} else {
+						console.log('아이디 있음');
+						$("#alert-success_idCheck").hide();
+						$("#alert-danger_idCheck").show();
+					}
+				},
+				error : function() {
+					alert('ERROR!');
+				}
+			});
+		});
+		/* 비밀번호 확인 */
 		$("#alert-success").hide();
 		$("#alert-danger").hide();
 		$("input#password_check").keyup(function() {
@@ -244,44 +358,60 @@ pre {
 			}
 		});
 
-	/* 성별체크 */
+		/* 성별체크 */
 		$("input:radio[name='gender']").click(function() {
 			var checked_radio = $('input:radio[name=gender]:checked').val(); // 선택된 radio의 value 가져오기
+<<<<<<< HEAD
+			$("#u_gender").val(checked_radio);
+=======
 			$("#gender").val(checked_radio);
 	
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 
 		});
 
-	/* 생일 */
-		$("input[name='day']").on("blur",function() {
+		/* 생일 */
+		$("input[name='day']").on(
+				"blur",
+				function() {
 					//console.log($("input[name=year]").val());
 					//console.log($("input[name=year]").val());
 					//console.log($("input[name=day]").val());
+<<<<<<< HEAD
+					var birth = $("input[name=year]").val() + '/'
+							+ $("input[name=month]").val() + '/'
+=======
 					var birth = $("input[name=year]").val()
 							+ $("input[name=month]").val()
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 							+ $("input[name=day]").val();
 
 					$("#birth").val(birth);
 
 				});
-		
-		
-	/* 약관동의 */
+
+		/* 약관동의 */
 		//전체선택 체크박스 클릭 
+<<<<<<< HEAD
+		$("#allCheck").click(function() {
+			if ($("#allCheck").prop("checked")) {
+				$("input[type=checkbox]").prop("checked", true);
+=======
 		$("#cball").click(function(){
 		 	if($("#cball").prop("checked")) {
 		 		$("input[type=checkbox]").prop("checked",true);
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 			} else {
-				$("input[type=checkbox]").prop("checked",false); 
+				$("input[type=checkbox]").prop("checked", false);
 			}
 		});
-	
-	/* 전송 */
+
+		/* 전송 */
 		$("button[id='join']").click(function() {
 			console.log('가입하기');
 			$("form#registerForm").submit();
 		});
-		
+
 	});
 </script>
 </head>
@@ -295,80 +425,134 @@ pre {
 
 			<h3 style="text-align: center;" id="head">개인 회원가입</h3>
 
-			<form action="/web/memberJoin.do" method="post" id="registerForm" name="registerForm">
+			<form action="/web/memberJoin.do" method="post" id="registerForm"
+				name="registerForm">
 				<div class="form-group">
+<<<<<<< HEAD
+					<label for="name">아이디</label><span id="idCheckSP"></span> <input
+						type="text" class="form-control" id="id" name="id"
+						placeholder="아이디"> <input type="hidden"
+						class="form-control" id="u_id" name="u_id" value=TestId>
+=======
 					<label for="name">아이디</label><span id="idCheckSP"></span> 
 					<input type="text" class="form-control" id="id" name="id" placeholder="아이디">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 					<button class="idChk" type="button" id="idChk">중복확인</button>
 				</div>
 				<div class="alert alert-success" id="alert-success_idCheck"
 					style="color: blue">사용 가능한 아이디입니다.</div>
-				<div class="alert alert-danger" id="alert-danger_idCheck" style="color: red">중복된 아이디가 존재합니다.</div>
-					
+				<div class="alert alert-danger" id="alert-danger_idCheck"
+					style="color: red">중복된 아이디가 존재합니다.</div>
+
 				<div class="form-group">
+<<<<<<< HEAD
+					<label for="password">비밀번호</label> <input type="password"
+						class="form-control" id="password" name="password"
+						placeholder="비밀번호">
+=======
 					<label for="password">비밀번호</label> 
 					<input type="password" class="form-control" id="password1" name="password1" placeholder="비밀번호">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 				<div class="form-group">
+<<<<<<< HEAD
+					<label for="password">비밀번호 확인</label> <input type="password"
+						class="form-control" id="password_check" name="password"
+						placeholder="비밀번호 확인"> <input type="hidden"
+						class="form-control" id="u_password" name="u_password"
+						value="TestPw">
+=======
 					<label for="password">비밀번호 확인</label> 
 					<input type="password" class="form-control" id="password_check" name="password_check" placeholder="비밀번호 확인">
 					<input type="text" class="form-control" id="password" name="password" value="TestPw">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
-				
+
 				<div class="alert alert-success" id="alert-success"
 					style="color: blue">비밀번호가 일치합니다.</div>
 				<div class="alert alert-danger" id="alert-danger" style="color: red">비밀번호가
 					일치하지 않습니다.</div>
 
 				<div class="form-group">
+<<<<<<< HEAD
+					<label for="name">이름</label> <input type="text"
+						class="form-control" id="name" name="name" placeholder="이름">
+					<input type="hidden" class="form-control" id="u_name" name="u_name"
+						value="TestName">
+=======
 					<label for="name">이름</label> 
 					<input type="text" class="form-control" id="name" name="name" placeholder="이름">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 				<div class="form-group">
+<<<<<<< HEAD
+					<label for="name">성별</label> <input type="radio" name="gender"
+						value="남자" />남성 <input type="radio" name="gender" value="여자" />여성
+					<input type="hidden" name="u_gender" id="u_gender"
+						value="TestGender">
+=======
 					<label for="name">성별</label> 
 					<input type="radio" name="gender" value="남자" />남성 
 					<input type="radio" name="gender" value="여자" />여성
 					<input type="text" name="gender" id="gender" value="TestGender">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 				<div class="form-group">
 					<label for="name">생일</label> <input type="text"
 						class="form-control" id="year" name="year" placeholder="년">년
 					<input type="text" class="form-control" id="month" name="month"
 						placeholder="월">월 <input type="text" class="form-control"
+<<<<<<< HEAD
+						id="day" name="day" placeholder="일">일 <input type="hidden"
+						class="form-control" id="u_birth" name="u_birth" value="TestBirth">
+=======
 						id="day" name="day" placeholder="일">일 
 						<input type="text" class="form-control" id="birth" name="birth" value="TestBirth">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 				<div class="form-group">
 					<label for="email">E-Mail</label> <input type="text"
 						class="form-control" id="email1" name="email1"
 						placeholder="Email Id" aria-describedby="emailHelp">@ <input
 						type="text" class="form-control" id="email2" name="email2"
-						placeholder="readOnly" disabled="disabled"> 
-					<select id="email3" name="email3" onblur="emailCheck()">
+						placeholder="readOnly" disabled="disabled"> <select
+						id="email3" name="email3" onblur="emailCheck()">
 						<option selected="selected">선택하세요</option>
 						<option value="naver.com">naver.com</option>
 						<option value="daum.net">daum.net</option>
 						<option value="google.com">google.com</option>
 						<option value="direct">직접 입력하기</option>
+<<<<<<< HEAD
+					</select> <input type="hidden" name="u_email" id="u_email" value="TestEmail">
+=======
 					</select> 
 					<input type="text" name="email" id="email" value="TestEmail">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 					<span id="emailHelp" class="form-text text-muted"
 						style="display: none;">올바른 이메일 주소를 입력하세요.</span>
 				</div>
-				
+
 				<div class="form-group">
-					<label for="name">주소</label> 
-					<input type="text" class="form-control" id="post1" name="post1"> - 
-					<input type="text" class="form-control" id="post2" name="post2">
+					<label for="name">주소</label> <input type="text"
+						class="form-control" id="post1" name="post1"> - <input
+						type="text" class="form-control" id="post2" name="post2">
 					<input type="button" id="postSend" name="postSend" value="주소검색">
 					<!-- <button id="postSend">주소검색</button> -->
+<<<<<<< HEAD
+					<br> <input type="text" class="form-control" id="address"
+						name="address" placeholder="상세주소"> <input type="hidden"
+						class="form-control" id="u_address" name="u_address"
+						value="TestAddress">
+
+=======
 					<br>
 					<input type="text" class="form-control" id="address" name="address" placeholder="주소" readonly="readonly">
 				
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 				<div class="form-group">
-					<label for="name">전화번호</label> 
-					<select name="order" id="tel0" name="tel0">
+					<label for="name">전화번호</label> <select name="order" id="tel0"
+						name="tel0">
 						<option value="02">02</option>
 						<option value="031">031</option>
 						<option value="032">032</option>
@@ -386,17 +570,30 @@ pre {
 						<option value="062">062</option>
 						<option value="063">063</option>
 						<option value="064">064</option>
+<<<<<<< HEAD
+					</select> - <input type="text" class="form-control" id="tel1" name="tel1">-
+					<input type="text" class="form-control" id="tel2" name="tel2"
+						onblur="telCheck()"> <input type="hidden"
+						class="form-control" id="u_tel" name="u_tel" value="TestTel">
+=======
 					</select> - 
 					<input type="text" class="form-control" id="tel1" name="tel1">- 
 					<input type="text" class="form-control" id="tel2" name="tel2" onblur="telCheck()">
 					<input type="text" class="form-control" id="tel" name="tel" value="TestTel">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 				<div class="form-group">
 					<label for="name">핸드폰번호</label> <input type="text"
 						class="form-control" id="hp1" name="hp1" value="010"> - <input
 						type="text" class="form-control" id="hp2" name="hp2"> - <input
+<<<<<<< HEAD
+						type="text" class="form-control" id="hp3" name="hp3"
+						onblur="hpCheck()"> <input type="hidden" id="u_cp"
+						name="u_cp" value="TestHp">
+=======
 						type="text" class="form-control" id="hp3" name="hp3" onblur="hpCheck()">
 						<input type="text" id="cp" name="cp" value="TestHp">
+>>>>>>> branch 'master' of https://github.com/osiris0607/Project.git
 				</div>
 
         <div class="form-group">
