@@ -75,8 +75,21 @@
   height: auto;
   background: #eee;
   }
-  #thumbnail{
-  
+  #img, #info{
+  display: inline;
+  }
+  #img{
+  width:35%;
+  }
+  #info{
+  float: right;
+  width: 40%;
+  }
+  #info table td{
+    padding: 2%;
+  }
+  #info table tr{
+     height: 3.5em;
   }
 
   
@@ -87,10 +100,26 @@
 <script src="/web/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	
-	
-	
-	
+   var price=$("#productPrice").text().slice(0,-1);
+   var option="";
+   var qty="";
+   var total="("+price+"+"+option+")*"+qty;
+   var result="";
+   $("#option").click(function(){
+      option = $("#option option:selected").val();
+      
+   })
+   
+   $("#qty").click(function(){
+      qty = $("#qty option:selected").val();
+   })
+   
+   result=eval(total);
+      
+   $("#totalPrice").val(result)+"원";
+
+   
+   
 });
 
 </script>
@@ -101,57 +130,72 @@ $(function(){
 <div class="page">
 <div class="clear"></div>
   <br><br>
- <h3>육류</h3>
+ <h3>육류</h3>   <!-- 카테고리명 불러오기  -->
  <br>
-  <table style="width: 100%; height: 400px; border: none; " >
-           
+ <div id="img">
+    <img src="/web/img/소꽃갈비살.jpg" width="400" >
+ </div>
+ <div id="info">
+    <table style="width: 100%; height: 400px; " >
+       <tr><td colspan="2">
+       <sub>회사상호명</sub><br>      <!-- 회사명 불러오기 -->
+       <header id="productTitle"><strong style="font-size: 1.5em;">햇살받은 햇소고기 구이용</strong></header><br>      <!-- 상품명(productTitle) 불러오기 -->
+       <sub id="productSubtitle">productSubtitle</sub><br>      <!-- productSubtitle 불러오기 -->
+       </td>
+        </tr>
+       <tr>
+          <td colspan="2"><hr></td>   
+        </tr>
+       <tr>
+          <td width="29%"><strong>가격</strong></td>
+            <td id="productPrice"><font color="red"><strong>9900원</strong></font></td>   <!-- 상품가격(productPrice) 불러오기 -->
+        </tr>
+       <tr>
+          <td><strong>옵션</strong></td>
+            <td>
+            <select id="option" style="width: 100%; height: 90%; background-color: #eee;">
+               <option value="selected">선택하세요</option>
+                <option value="100">100g</option>      <!-- value값으로 옵션에 따른 추가 금액 넣기 -->
+                <option value="200">200g</option>
+                <option value="300">300g</option>
+               <option value="400">400g</option>
+            </select></td>   
+        </tr>
+       <tr>
+          <td><strong>수량</strong></td>   <!-- 재고에 맞춰서 foreach로 옵션 수 맞추기  불러오기 -->
+            <td>
+            <select id="qty" style="width: 100%; height: 90%; background-color: #eee;">
+                <option value="1">1개</option>
+                <option value="2">2개</option>
+                <option value="3">3개</option>
+               <option value="4">4개</option>
+            </select></td>   
+        </tr>
+        <tr>
+          <td colspan="2"><hr></td>   <!-- 중간 실선-->
+        </tr>
+       <tr>
+          <td><strong>총금액</strong><br>
+          <small><small>(무료배송)</small></small>
+          </td>
+          <td id="totalPrice"><strong>99,000원</strong></td>      <!-- eval함수의 결과값이 들어갈 곳 -->
+       </tr>
             <tr>
-                <td rowspan="5" style="width: 50%;">
-                <img src="/web/img/소꽃갈비살.jpg" width="500" >
-                </td>
-                
-                <td>
-        	 <sub style="text-align: left; margin: auto;">소고기 좋아</sub> <br>      
-                햇살받은 햇소고기 구이용</td>
-            </tr>
-            <tr>
-               <td>
-               <sub>가격</sub><br>
-               <font size="2" color="red"> 9,900원</font></td>
-            </tr>
-            <tr>
-               <td>
-               <sub>무료배송</sub><br>
-               금요일 11/13일 도착예정</td>
-            </tr>
-            <tr>
-               <td>
-            <sub>택배사:승호택배</sub><br>
-               5KG(중)X1개
-               <select style="width: 100%; height: 40px;">
-                  <option value="selected">선택하세요</option>
-                  <option value="1">600G 1개</option>
-                  <option value="2">600G 2개</option>
-                  <option value="3">600G 3개</option>
-                  <option value="4">600G 4개</option>
-               </select>
-               </td>
-            </tr>
-            <tr>
-               <td>
-               <button type="button" class="btn btn-default red">
-               <span class="glyphicon glyphicon-thumbs-up"> </span> 좋아요 
-              </button> 
-               <button type="button" class="btn btn-default" style="float: right;">장바구니</button>
-             <button type="button" class="btn btn-default" style="float: right;">구매하기</button>
+               <td colspan="2">
+             <button type="button" class="btn btn-default" style="float: right; width: 49.9%;">구매하기</button>
+             <button type="button" class="btn btn-default" style="float: right; width: 49.9%;">장바구니</button>
                </td>
             </tr>
            
             
-        </table><br>
-  
-  
-  <div class="line"></div>
+        </table>
+ </div>
+ <br>
+ <br>
+ <hr>
+ <br>
+ <br>
+ 
   
   
   <section id="section1">
@@ -354,11 +398,11 @@ $(function(){
   </div>
   </div> 
 
-		
+      
 </div><!-- .page -->
 </main>
 <footer>
-  <div class="line"></div>	
+  <div class="line"></div>   
   <div class="clear"></div>
 <jsp:include page="../include/footer.jsp" /> 
 </footer>
